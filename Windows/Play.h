@@ -164,7 +164,7 @@ public:
     void SpawnTxTChess(sf::RenderWindow& win){
      for (int i = 0; i < 2; i++)
          for (int j = 0; j < iL; j++)
-             win.draw( FieldNumber[j][i]);
+             win.draw(FieldNumber[j][i]);
     }
 
     void PressedPlay(sf::RenderWindow& win,std::string TypeBoard,int *mas) {

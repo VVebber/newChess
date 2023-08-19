@@ -54,8 +54,6 @@ void CredShape(float x,float y,float j,PawnWhite& pawn,sf::CircleShape spam);
                                 pawn.shape.erase(pawn.shape.begin() + i);
                                 i = 0;
                             }
-                    float x1 = 
-                    if
                 }
             }
     }

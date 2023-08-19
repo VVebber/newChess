@@ -25,8 +25,6 @@ void FCredVectorFigure(vector<float> WhiteFigure, PawnWhite& pawnWhite, QueenWhi
 int MasChForshapes[20]{0,0,0,0,0,0,0,0,0,0};
 string TypeChess = "classic";
 string *sTypeChess = &TypeChess;//тип доски
-// MasChForshapes[0] - пешки
-// MasChForshapes[1] - ладья
 // MasChForshapes[9] - Menu
 // MasChForshapes[10] - BtrMenu
 // MasChForshapes[11] - BtrPlay
@@ -254,4 +252,3 @@ string *sTypeChess = &TypeChess;//тип доски
         }
         cout<<pawnWhite.color<<"|"<<WhiteFigure.size()<<"\n";
     }
-
