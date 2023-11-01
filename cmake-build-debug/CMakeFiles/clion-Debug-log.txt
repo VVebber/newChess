@@ -1,0 +1,1 @@
+CMakeLists.txt not found in /Users/danilmalyshev/Desktop/MyProgect/chess Select CMakeLists.txt

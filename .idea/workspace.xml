@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="CMakePresetLoader">{
+  &quot;useNewFormat&quot;: true
+}</component>
+  <component name="CMakeReloadState">
+    <option name="reloaded" value="true" />
+  </component>
+  <component name="CMakeRunConfigurationManager">
+    <generated />
+  </component>
+  <component name="CMakeSettings">
+    <configurations>
+      <configuration PROFILE_NAME="Debug" ENABLED="true" CONFIG_NAME="Debug" />
+    </configurations>
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="3a604557-d30c-489d-8416-8affa4a3efff" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/CMakeFiles/chess.dir/main.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeFiles/chess.dir/main.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeFiles/chess.dir/main.cpp.o.d" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeFiles/chess.dir/main.cpp.o.d" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ChessPieces/King.h" beforeDir="false" afterPath="$PROJECT_DIR$/ChessPieces/King.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ChessPieces/Pawn.h" beforeDir="false" afterPath="$PROJECT_DIR$/ChessPieces/Pawn.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ChessPieces/Queen.h" beforeDir="false" afterPath="$PROJECT_DIR$/ChessPieces/Queen.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GameLogic.h" beforeDir="false" afterPath="$PROJECT_DIR$/GameLogic.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/chess" beforeDir="false" afterPath="$PROJECT_DIR$/chess" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/Battle-Chess-Pieces-PNG-File — копия 2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/Kings/BlackKing.png" beforeDir="false" afterPath="$PROJECT_DIR$/images/Kings/BlackKing.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/Kings/WhiteKing.png" beforeDir="false" afterPath="$PROJECT_DIR$/images/Kings/WhiteKing.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/Pawns/BlackPawn.png" beforeDir="false" afterPath="$PROJECT_DIR$/images/Pawns/BlackPawn.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/Pawns/WhitePawn.png" beforeDir="false" afterPath="$PROJECT_DIR$/images/Pawns/WhitePawn.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/Queens/BlackQueen.png" beforeDir="false" afterPath="$PROJECT_DIR$/images/Queens/BlackQueen.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/Queens/WhiteQueen.png" beforeDir="false" afterPath="$PROJECT_DIR$/images/Queens/WhiteQueen.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/main.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/window/MainMenu.h" beforeDir="false" afterPath="$PROJECT_DIR$/window/MainMenu.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/window/PlayMenu.h" beforeDir="false" afterPath="$PROJECT_DIR$/window/PlayMenu.h" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ClangdSettings">
+    <option name="formatViaClangd" value="false" />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Debug" />
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
+  <component name="ProjectApplicationVersion">
+    <option name="ide" value="CLion" />
+    <option name="majorVersion" value="2023" />
+    <option name="minorVersion" value="2.1" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 5
+}</component>
+  <component name="ProjectId" id="2V9EyO8I8V7p2o6GMi2BCC6nrOo" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.cidr.known.project.marker&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;cf.first.check.clang-format&quot;: &quot;false&quot;,
+    &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="CLionExternalRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true">
+      <method v="2">
+        <option name="CLION.EXTERNAL.BUILD" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="debug1" type="com.jetbrains.cidr.remote.gdbserver.type" factoryName="com.jetbrains.cidr.remote.gdbserver.factory" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="chess" TARGET_NAME="chess" CONFIG_NAME="Debug" version="1" RUN_TARGET_PROJECT_NAME="chess" RUN_TARGET_NAME="chess">
+      <custom-gdb-server version="1" gdb-connect="localhost:1234" executable="" warmup-ms="0" download-type="ALWAYS" uploadFile="/tmp/CLion/debug/chess" defaultGdbServerArgs=":1234 /tmp/CLion/debug/chess">
+        <debugger kind="GDB" isBundled="true" />
+      </custom-gdb-server>
+      <method v="2">
+        <option name="CLION.COMPOUND.BUILD" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="3a604557-d30c-489d-8416-8affa4a3efff" name="Changes" comment="" />
+      <created>1694240149755</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1694240149755</updated>
+      <workItem from="1694240150898" duration="2719000" />
+      <workItem from="1694249735383" duration="4548000" />
+      <workItem from="1694338104316" duration="12703000" />
+      <workItem from="1694498284807" duration="619000" />
+      <workItem from="1694601202628" duration="4433000" />
+      <workItem from="1694670693069" duration="2033000" />
+      <workItem from="1694696802765" duration="598000" />
+      <workItem from="1694725459707" duration="6645000" />
+      <workItem from="1694850985883" duration="2382000" />
+      <workItem from="1697904990897" duration="880000" />
+      <workItem from="1697909711853" duration="2286000" />
+      <workItem from="1697983220209" duration="725000" />
+      <workItem from="1698078690501" duration="3302000" />
+      <workItem from="1698479244407" duration="2482000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="VCPKGProject">
+    <isAutomaticEditVcpkgJson value="false" />
+    <isAutomaticCheckingOnLaunch value="false" />
+    <isAutomaticFoundErrors value="true" />
+    <isAutomaticFoundErrors value="true" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/ChessPieces/King.h</url>
+          <line>19</line>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/GameLogic.h</url>
+          <line>5</line>
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>
