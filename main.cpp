@@ -19,6 +19,8 @@ void DownTX(std::vector <sf::Texture> &, std::vector <std::string>);
 
 void CreatePawn(std::vector <Pawn> &, int, sf::Texture &);
 
+void F_CreatOject(std::vector<Pawn>&,  std::vector <sf::Texture>&,std::string, int, int);
+
 template<typename T1>
 void F_CreadFigure(std::vector <T1> &, std::string ColorPlayr);
 
@@ -30,6 +32,7 @@ int main() {
     Bekgraund.setSize(sf::Vector2f(1290, 960));
 
     int Quant_Players = 2;
+    int NPDGT = 16; // number of pieces depending on game type(кол-во фигур от тира игры классика - 16)
     int Quant_Pawn = 8, Quant_Knight = 2, Quant_Bishop = 2,
             Quant_Rook = 2, Quant_Queen = 1, Quant_King = 1;
 
@@ -105,18 +108,14 @@ int main() {
 
     //cread Figure
     std::vector <Pawn> Pawns;
-    for (int i = 0, i_Pw = 0, i_; i < 8; i++) {
-        Pawn pawn
-        if (i_Pw < Quant_Playr * 1 && Quant_Playrs <= 2) {
-            std::string posit = "up";
-            pawn(i, posit, "pawn", TxPawn);
-        } else if (i_Pw < Quant_Playr * 2 && Quant_Playrs <= 2) {
-            std::string posit = "down";
-            pawn(i, posit, "pawn", TxPawn);
-        }
+    F_CreatOject(Pawns,TxPawn,"pawn",Quant_Players,Quant_Pawn);
+    F_CreatOject(Pawns,TxQueen,"queen",Quant_Players,Quant_Queen);
+    F_CreatOject(Pawns,TxKing,"king",Quant_Players,Quant_King);
+    F_CreatOject(Pawns,TxRook,"rook",Quant_Players,Quant_Rook);
+    F_CreatOject(Pawns,TxKnight,"knights",Quant_Players,Quant_Knight);
+    F_CreatOject(Pawns,TxBishop,"bishops",Quant_Players,Quant_Bishop);
 
-        Pawns.push_back(pawn);
-    }
+    std::cout<<"\n2|"<<Pawns.size();
 
     while (win.isOpen()) {
         sf::Event event{};
@@ -140,16 +139,6 @@ int main() {
 
                     for (auto &pawn: Pawns)
                         pawn.F_mousePositionPres(mousePosition);
-                    for (auto &queen: Queens)
-                        queen.F_mousePositionPres(mousePosition);
-                    for (auto &king: Kings)
-                        king.F_mousePositionPres(mousePosition);
-                    for (auto &rook: Rooks)
-                        rook.F_mousePositionPres(mousePosition);
-                    for (auto &knight: Knights)
-                        knight.F_mousePositionPres(mousePosition);
-                    for (auto &bishop: Bishops)
-                        bishop.F_mousePositionPres(mousePosition);
                     //нажатия
                     mainMenu.PressedMainMenu(win, ptr_CreadPlayMenu);
                     playMenu.PressedPlayMenu(ptr_CreadFigure, ptr_ColorPlayr);
@@ -164,11 +153,6 @@ int main() {
         if (CreadFigure && (playMenu.Btr.size() == 0)) {
             CreadFigure = false;
             F_CreadFigure(Pawns, ColorPlayr);
-            F_CreadFigure(Queens, ColorPlayr);
-            F_CreadFigure(Kings, ColorPlayr);
-            F_CreadFigure(Rooks, ColorPlayr);
-            F_CreadFigure(Knights, ColorPlayr);
-            F_CreadFigure(Bishops, ColorPlayr);
 
             Play = true;
         }
@@ -187,43 +171,17 @@ int main() {
         for (auto &pawn: Pawns)
             pawn.SpawnPawn(win);
 
-        for (auto &queen: Queens)
-            queen.SpawnPawn(win);
 
-        for (auto &king: Kings)
-            king.SpawnPawn(win);
-
-        for (auto &rook: Rooks)
-            rook.SpawnPawn(win);
-
-        for (auto &knight: Knights)
-            knight.SpawnPawn(win);
-
-        for (auto &bishop: Bishops)
-            bishop.SpawnPawn(win);
+/*
 
         if (Pawns.size() != 0 && Play) {
             Logic(prt_NombeFigure, prt_TypeFigure, ptr_Press, ptr_Color, ptr_StrokeLock,
                   Pawns, Queens, Kings, Rooks, Bishops, Knights);
         }
+*/
 
         for (auto &pawn: Pawns)
             pawn.SpawnShape(win);
-
-        for (auto &queen: Queens)
-            queen.SpawnShape(win);
-
-        for (auto &king: Kings)
-            king.SpawnShape(win);
-
-        for (auto &rook: Rooks)
-            rook.SpawnShape(win);
-
-        for (auto &knight: Knights)
-            knight.SpawnShape(win);
-
-        for (auto &bishop: Bishops)
-            bishop.SpawnShape(win);
         win.display();
     }
     return 0;
@@ -250,6 +208,24 @@ void DownFont(std::vector <sf::Font> &TxVector, std::vector <std::string> FileNa
             TxVector.push_back(font);
         }
     }
+}
+
+void F_CreatOject(std::vector<Pawn> &Pawns,  std::vector <sf::Texture> &TxFigure,
+                  std::string TypeFigure, int Quant_Players, int Quant_Figur){
+    for (int i = 0, i_Fi = 0, i_; i < Quant_Figur * Quant_Players; i++) {
+        Pawn pawn{0,"","",{}};
+        if (i_Fi < Quant_Figur * 1 && Quant_Players <= 2) {
+            std::string posit = "up";
+            pawn.init(i, posit, TypeFigure, TxFigure);
+            i_Fi++;
+        } else if (i_Fi < Quant_Figur * 2 && Quant_Players <= 2) {
+            std::string posit = "down";
+            pawn.init(i, posit, TypeFigure, TxFigure);
+            i_Fi++;
+        }
+        Pawns.push_back(pawn);
+    }
+    std::cout<<"\n|"<<Quant_Figur * Quant_Players;
 }
 
 template<typename T1>

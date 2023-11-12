@@ -39,6 +39,16 @@ public:
             TxPawn.push_back(spam);
     }
 
+    void init(int p_Sh, const std::string& p_position = "", const std::string& p_TypeFigure = "", const std::vector<sf::Texture>& p_TxPawn = {}){
+        position = p_position;
+        TypeFigure = p_TypeFigure;
+
+        Sh = p_Sh % 8;
+
+        for (auto& spam : p_TxPawn)
+            TxPawn.push_back(spam);
+    }
+
     void F_event(sf::Event CL_event) {
         event = CL_event;
     }
@@ -57,27 +67,26 @@ public:
         pawn.setSize(sf::Vector2f(60, 60));
         pawn.setOutlineThickness(1);
         pawn.setOutlineColor(sf::Color(250, 150, 100));
-       
+
         if (TypeFigure == "pawn")
             pawn.setPosition(56 + 67.7 * (Sh + 1), (position == "up" ? 85 + 67.7 * 2 : 85 + 67.7 * 7));
-        
+
         else if (TypeFigure == "queen")
             pawn.setPosition(56 + 67.7 * 4, (position == "up" ? 85 + 67.7 * 1 : 85 + 67.7 * 8));
-       
+
         else if (TypeFigure == "king")
             pawn.setPosition(56 + 67.7 * 5, (position == "up" ? 85 + 67.7 * 1 : 85 + 67.7 * 8));
-        
+
         else if (TypeFigure == "rook")
             pawn.setPosition(56 + 67.7 * (Sh == 0 ? 8 : 1), (position == "up" ? 85 + 67.7 * 1 : 85 + 67.7 * 8));
-        
+
         else if (TypeFigure == "knights")
             pawn.setPosition(56 + 67.7 * (Sh == 0 ? 7 : 2), (position == "up" ? 85 + 67.7 * 1 : 85 + 67.7 * 8));
-       
+
         else if (TypeFigure == "bishops")
             pawn.setPosition(56 + 67.7 * (Sh == 0 ? 6 : 3), (position == "up" ? 85 + 67.7 * 1 : 85 + 67.7 * 8));
 
-        pawn.setTexture(&TxPawn[color == "white" ? 1 : 0]);
-        std::cout;
+        pawn.setTexture(&TxPawn[color == "white" ? 0 : 1]);
         Figure.push_back(pawn);
     }
 
