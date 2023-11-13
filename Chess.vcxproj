@@ -134,6 +134,7 @@
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <None Include=".gitignore" />
     <None Include="openal32.dll" />
     <None Include="sfml-audio-2.dll" />
     <None Include="sfml-audio-d-2.dll" />
@@ -147,12 +148,7 @@
     <None Include="sfml-window-d-2.dll" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="ChessPieces\Bishop.h" />
-    <ClInclude Include="ChessPieces\King.h" />
-    <ClInclude Include="ChessPieces\Knight.h" />
     <ClInclude Include="ChessPieces\Pawn.h" />
-    <ClInclude Include="ChessPieces\Queen.h" />
-    <ClInclude Include="ChessPieces\Rook.h" />
     <ClInclude Include="GameLogic.h" />
     <ClInclude Include="window\MainMenu.h" />
     <ClInclude Include="window\PlayMenu.h" />

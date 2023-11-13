@@ -6,11 +6,6 @@
 
 //Fige
 #include "ChessPieces/Pawn.h"
-#include "ChessPieces/King.h"
-#include "ChessPieces/Queen.h"
-#include "ChessPieces/Knight.h"
-#include "ChessPieces/Bishop.h"
-#include "ChessPieces/Rook.h"
 
 #include "GameLogic.h"
 
@@ -20,9 +15,6 @@ void DownTX(std::vector <sf::Texture> &, std::vector <std::string>);
 void CreatePawn(std::vector <Pawn> &, int, sf::Texture &);
 
 void F_CreatOject(std::vector<Pawn>&,  std::vector <sf::Texture>&,std::string, int, int);
-
-template<typename T1>
-void F_CreadFigure(std::vector <T1> &, std::string ColorPlayr);
 
 int main() {
 
@@ -39,8 +31,6 @@ int main() {
     int NombeFigure = -1;
     int *prt_NombeFigure = &NombeFigure; //идет в функию logic
 
-    bool Play = false;
-
     bool Press = false;
     bool *ptr_Press = &Press; //идет в функию logic
 
@@ -50,13 +40,10 @@ int main() {
     bool CreadPlayMenu = false;
     bool *ptr_CreadPlayMenu = &CreadPlayMenu;
 
-    bool CreadFigure = false;
-    bool *ptr_CreadFigure = &CreadFigure;
+    bool PlayLogic = false;
+    bool *ptr_PlayLogic = &PlayLogic;
 
-    std::string ColorPlayr;
-    std::string *ptr_ColorPlayr = &ColorPlayr;
-
-    std::string Color = "white";
+    std::string Color = "black";
     std::string *ptr_Color = &Color; // идут в функию logic
 
     std::string TypeFigure;
@@ -141,7 +128,7 @@ int main() {
                         pawn.F_mousePositionPres(mousePosition);
                     //нажатия
                     mainMenu.PressedMainMenu(win, ptr_CreadPlayMenu);
-                    playMenu.PressedPlayMenu(ptr_CreadFigure, ptr_ColorPlayr);
+                    playMenu.PressedPlayMenu(ptr_PlayLogic, Pawns);
                 }
         }
         //создание кнопок в меню PlayMenu
@@ -149,15 +136,7 @@ int main() {
             CreadPlayMenu = false;
             playMenu.CreatBrtPlayMenu();
         }
-        // Создание фигур
-        if (CreadFigure && (playMenu.Btr.size() == 0)) {
-            CreadFigure = false;
-            F_CreadFigure(Pawns, ColorPlayr);
-
-            Play = true;
-        }
-
-
+  
         win.clear();
         win.draw(Bekgraund);
 
@@ -172,13 +151,12 @@ int main() {
             pawn.SpawnPawn(win);
 
 
-/*
 
-        if (Pawns.size() != 0 && Play) {
-            Logic(prt_NombeFigure, prt_TypeFigure, ptr_Press, ptr_Color, ptr_StrokeLock,
-                  Pawns, Queens, Kings, Rooks, Bishops, Knights);
+
+        if (PlayLogic) {
+            Logic(prt_NombeFigure, prt_TypeFigure, ptr_Press, ptr_Color, ptr_StrokeLock,Pawns);
         }
-*/
+
 
         for (auto &pawn: Pawns)
             pawn.SpawnShape(win);
@@ -226,15 +204,4 @@ void F_CreatOject(std::vector<Pawn> &Pawns,  std::vector <sf::Texture> &TxFigure
         Pawns.push_back(pawn);
     }
     std::cout<<"\n|"<<Quant_Figur * Quant_Players;
-}
-
-template<typename T1>
-void F_CreadFigure(std::vector <T1> &figure, std::string ColorPlayr) {
-    for (int i = 0; i < figure.size(); i++) {
-        if (i < figure.size() / 2)
-            figure[i].F_color(ColorPlayr == "white" ? "white" : "black");
-        else if (i > figure.size() / 2 - 1 && i < figure.size())
-            figure[i].F_color(ColorPlayr == "white" ? "black" : "white");
-        figure[i].CredPawn();
-    }
 }

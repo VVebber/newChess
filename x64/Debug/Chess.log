@@ -1,76 +1,58 @@
 ﻿  main.cpp
-E:\VisualProject\Chess\window\MainMenu.h(103,74): warning C4244: аргумент: преобразование "int" в "T", возможна потеря данных
+E:\VisualProject\sfml1\newChess\window\MainMenu.h(103,74): warning C4244: аргумент: преобразование "int" в "T", возможна потеря данных
           with
           [
               T=float
           ]
-E:\VisualProject\Chess\window\MainMenu.h(103,55): warning C4244: аргумент: преобразование "int" в "T", возможна потеря данных
+E:\VisualProject\sfml1\newChess\window\MainMenu.h(103,55): warning C4244: аргумент: преобразование "int" в "T", возможна потеря данных
           with
           [
               T=float
           ]
-E:\VisualProject\Chess\ChessPieces\Pawn.h(10,23): warning C4305: инициализация: усечение из "double" в "float"
-E:\VisualProject\Chess\ChessPieces\Pawn.h(11,23): warning C4305: инициализация: усечение из "double" в "float"
-E:\VisualProject\Chess\ChessPieces\Pawn.h(13,30): warning C4305: инициализация: усечение из "double" в "const float"
-E:\VisualProject\Chess\ChessPieces\Pawn.h(62,62): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
-E:\VisualProject\Chess\ChessPieces\Pawn.h(62,33): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
-E:\VisualProject\Chess\ChessPieces\Pawn.h(65,55): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
-E:\VisualProject\Chess\ChessPieces\Pawn.h(65,33): warning C4305: аргумент: усечение из "double" в "float"
-E:\VisualProject\Chess\ChessPieces\Pawn.h(68,55): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
-E:\VisualProject\Chess\ChessPieces\Pawn.h(71,71): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
-E:\VisualProject\Chess\ChessPieces\Pawn.h(71,33): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
-E:\VisualProject\Chess\ChessPieces\Pawn.h(74,71): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
-E:\VisualProject\Chess\ChessPieces\Pawn.h(74,33): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
-E:\VisualProject\Chess\ChessPieces\Pawn.h(77,71): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
-E:\VisualProject\Chess\ChessPieces\Pawn.h(77,33): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
-E:\VisualProject\Chess\GameLogic.h(75,30): warning C4305: инициализация: усечение из "double" в "const float"
-E:\VisualProject\Chess\main.cpp(162,101): warning C4244: аргумент: преобразование "int" в "T", возможна потеря данных
+E:\VisualProject\sfml1\newChess\ChessPieces\Pawn.h(10,23): warning C4305: инициализация: усечение из "double" в "float"
+E:\VisualProject\sfml1\newChess\ChessPieces\Pawn.h(11,23): warning C4305: инициализация: усечение из "double" в "float"
+E:\VisualProject\sfml1\newChess\ChessPieces\Pawn.h(13,30): warning C4305: инициализация: усечение из "double" в "const float"
+E:\VisualProject\sfml1\newChess\ChessPieces\Pawn.h(97,62): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+E:\VisualProject\sfml1\newChess\ChessPieces\Pawn.h(97,33): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+E:\VisualProject\sfml1\newChess\ChessPieces\Pawn.h(100,55): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+E:\VisualProject\sfml1\newChess\ChessPieces\Pawn.h(100,33): warning C4305: аргумент: усечение из "double" в "float"
+E:\VisualProject\sfml1\newChess\ChessPieces\Pawn.h(103,55): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+E:\VisualProject\sfml1\newChess\ChessPieces\Pawn.h(106,71): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+E:\VisualProject\sfml1\newChess\ChessPieces\Pawn.h(106,33): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+E:\VisualProject\sfml1\newChess\ChessPieces\Pawn.h(109,71): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+E:\VisualProject\sfml1\newChess\ChessPieces\Pawn.h(109,33): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+E:\VisualProject\sfml1\newChess\ChessPieces\Pawn.h(112,71): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+E:\VisualProject\sfml1\newChess\ChessPieces\Pawn.h(112,33): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+E:\VisualProject\sfml1\newChess\GameLogic.h(57,30): warning C4305: инициализация: усечение из "double" в "const float"
+E:\VisualProject\sfml1\newChess\main.cpp(122,101): warning C4244: аргумент: преобразование "int" в "T", возможна потеря данных
           with
           [
               T=float
           ]
-E:\VisualProject\Chess\main.cpp(162,80): warning C4244: аргумент: преобразование "int" в "T", возможна потеря данных
+E:\VisualProject\sfml1\newChess\main.cpp(122,80): warning C4244: аргумент: преобразование "int" в "T", возможна потеря данных
           with
           [
               T=float
           ]
-E:\VisualProject\Chess\GameLogic.h(197,97): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
-E:\VisualProject\Chess\GameLogic.h(129,5): message : выполняется компиляция ссылки на экземпляр шаблон функции "void LogicUp<ALLFigure,Pawn>(std::vector<ALLFigure,std::allocator<ALLFigure>> &,std::vector<Pawn,std::allocator<Pawn>> &)"
-E:\VisualProject\Chess\GameLogic.h(252,115): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
-E:\VisualProject\Chess\GameLogic.h(134,5): message : выполняется компиляция ссылки на экземпляр шаблон функции "void LogicUpLeft<ALLFigure,Queen>(std::vector<ALLFigure,std::allocator<ALLFigure>> &,std::vector<Queen,std::allocator<Queen>> &)"
-E:\VisualProject\Chess\GameLogic.h(252,64): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
-E:\VisualProject\Chess\GameLogic.h(307,115): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
-E:\VisualProject\Chess\GameLogic.h(137,5): message : выполняется компиляция ссылки на экземпляр шаблон функции "void LogicUpRight<ALLFigure,Queen>(std::vector<ALLFigure,std::allocator<ALLFigure>> &,std::vector<Queen,std::allocator<Queen>> &)"
-E:\VisualProject\Chess\GameLogic.h(307,64): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
-E:\VisualProject\Chess\GameLogic.h(362,98): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
-E:\VisualProject\Chess\GameLogic.h(141,5): message : выполняется компиляция ссылки на экземпляр шаблон функции "void LogicDown<ALLFigure,Pawn>(std::vector<ALLFigure,std::allocator<ALLFigure>> &,std::vector<Pawn,std::allocator<Pawn>> &)"
-E:\VisualProject\Chess\GameLogic.h(416,115): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
-E:\VisualProject\Chess\GameLogic.h(146,5): message : выполняется компиляция ссылки на экземпляр шаблон функции "void LogicDownLeft<ALLFigure,Queen>(std::vector<ALLFigure,std::allocator<ALLFigure>> &,std::vector<Queen,std::allocator<Queen>> &)"
-E:\VisualProject\Chess\GameLogic.h(416,64): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
-E:\VisualProject\Chess\GameLogic.h(471,115): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
-E:\VisualProject\Chess\GameLogic.h(149,5): message : выполняется компиляция ссылки на экземпляр шаблон функции "void LogicDownRight<ALLFigure,Queen>(std::vector<ALLFigure,std::allocator<ALLFigure>> &,std::vector<Queen,std::allocator<Queen>> &)"
-E:\VisualProject\Chess\GameLogic.h(471,64): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
-E:\VisualProject\Chess\GameLogic.h(526,64): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
-E:\VisualProject\Chess\GameLogic.h(153,5): message : выполняется компиляция ссылки на экземпляр шаблон функции "void LogicLeft<ALLFigure,Queen>(std::vector<ALLFigure,std::allocator<ALLFigure>> &,std::vector<Queen,std::allocator<Queen>> &)"
-E:\VisualProject\Chess\GameLogic.h(580,64): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
-E:\VisualProject\Chess\GameLogic.h(157,5): message : выполняется компиляция ссылки на экземпляр шаблон функции "void LogicRight<ALLFigure,Queen>(std::vector<ALLFigure,std::allocator<ALLFigure>> &,std::vector<Queen,std::allocator<Queen>> &)"
-E:\VisualProject\Chess\GameLogic.h(738,121): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
-E:\VisualProject\Chess\GameLogic.h(161,5): message : выполняется компиляция ссылки на экземпляр шаблон функции "void LogicKnights<ALLFigure,Knight>(std::vector<ALLFigure,std::allocator<ALLFigure>> &,std::vector<Knight,std::allocator<Knight>> &)"
-E:\VisualProject\Chess\GameLogic.h(738,76): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
-E:\VisualProject\Chess\GameLogic.h(739,121): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
-E:\VisualProject\Chess\GameLogic.h(739,76): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
-E:\VisualProject\Chess\GameLogic.h(740,121): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
-E:\VisualProject\Chess\GameLogic.h(740,76): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
-E:\VisualProject\Chess\GameLogic.h(741,121): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
-E:\VisualProject\Chess\GameLogic.h(741,76): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
-E:\VisualProject\Chess\GameLogic.h(742,117): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
-E:\VisualProject\Chess\GameLogic.h(742,76): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
-E:\VisualProject\Chess\GameLogic.h(743,117): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
-E:\VisualProject\Chess\GameLogic.h(743,76): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
-E:\VisualProject\Chess\GameLogic.h(744,117): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
-E:\VisualProject\Chess\GameLogic.h(744,76): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
-E:\VisualProject\Chess\GameLogic.h(745,117): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
-E:\VisualProject\Chess\GameLogic.h(745,76): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
-E:\VisualProject\Chess\GameLogic.h(644,30): warning C4834: отмена возвращаемого значения функции с атрибутом "nodiscard"
-E:\VisualProject\Chess\GameLogic.h(178,5): message : выполняется компиляция ссылки на экземпляр шаблон функции "void killing<Pawn>(std::vector<Pawn,std::allocator<Pawn>> &,KillFigure)"
-  Chess.vcxproj -> E:\VisualProject\Chess\x64\Debug\Chess.exe
+E:\VisualProject\sfml1\newChess\main.cpp(193,31): warning C4101: i_: неиспользованная локальная переменная
+E:\VisualProject\sfml1\newChess\GameLogic.h(173,97): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+E:\VisualProject\sfml1\newChess\GameLogic.h(88,5): message : выполняется компиляция ссылки на экземпляр шаблон функции "void LogicUp<ALLFigure,Pawn>(std::vector<ALLFigure,std::allocator<ALLFigure>> &,std::vector<Pawn,std::allocator<Pawn>> &)"
+E:\VisualProject\sfml1\newChess\GameLogic.h(213,115): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+E:\VisualProject\sfml1\newChess\GameLogic.h(89,5): message : выполняется компиляция ссылки на экземпляр шаблон функции "void LogicUpLeft<ALLFigure,Pawn>(std::vector<ALLFigure,std::allocator<ALLFigure>> &,std::vector<Pawn,std::allocator<Pawn>> &)"
+E:\VisualProject\sfml1\newChess\GameLogic.h(213,64): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+E:\VisualProject\sfml1\newChess\GameLogic.h(255,115): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+E:\VisualProject\sfml1\newChess\GameLogic.h(90,5): message : выполняется компиляция ссылки на экземпляр шаблон функции "void LogicUpRight<ALLFigure,Pawn>(std::vector<ALLFigure,std::allocator<ALLFigure>> &,std::vector<Pawn,std::allocator<Pawn>> &)"
+E:\VisualProject\sfml1\newChess\GameLogic.h(255,64): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+E:\VisualProject\sfml1\newChess\GameLogic.h(424,64): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+E:\VisualProject\sfml1\newChess\GameLogic.h(92,5): message : выполняется компиляция ссылки на экземпляр шаблон функции "void LogicLeft<ALLFigure,Pawn>(std::vector<ALLFigure,std::allocator<ALLFigure>> &,std::vector<Pawn,std::allocator<Pawn>> &)"
+E:\VisualProject\sfml1\newChess\GameLogic.h(464,64): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+E:\VisualProject\sfml1\newChess\GameLogic.h(93,5): message : выполняется компиляция ссылки на экземпляр шаблон функции "void LogicRight<ALLFigure,Pawn>(std::vector<ALLFigure,std::allocator<ALLFigure>> &,std::vector<Pawn,std::allocator<Pawn>> &)"
+E:\VisualProject\sfml1\newChess\GameLogic.h(299,98): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+E:\VisualProject\sfml1\newChess\GameLogic.h(95,5): message : выполняется компиляция ссылки на экземпляр шаблон функции "void LogicDown<ALLFigure,Pawn>(std::vector<ALLFigure,std::allocator<ALLFigure>> &,std::vector<Pawn,std::allocator<Pawn>> &)"
+E:\VisualProject\sfml1\newChess\GameLogic.h(340,115): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+E:\VisualProject\sfml1\newChess\GameLogic.h(96,5): message : выполняется компиляция ссылки на экземпляр шаблон функции "void LogicDownLeft<ALLFigure,Pawn>(std::vector<ALLFigure,std::allocator<ALLFigure>> &,std::vector<Pawn,std::allocator<Pawn>> &)"
+E:\VisualProject\sfml1\newChess\GameLogic.h(340,64): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+E:\VisualProject\sfml1\newChess\GameLogic.h(382,115): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+E:\VisualProject\sfml1\newChess\GameLogic.h(97,5): message : выполняется компиляция ссылки на экземпляр шаблон функции "void LogicDownRight<ALLFigure,Pawn>(std::vector<ALLFigure,std::allocator<ALLFigure>> &,std::vector<Pawn,std::allocator<Pawn>> &)"
+E:\VisualProject\sfml1\newChess\GameLogic.h(382,64): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+  Chess.vcxproj -> E:\VisualProject\sfml1\newChess\x64\Debug\Chess.exe

@@ -1,1 +1,2 @@
 E:\VisualProject\Chess\x64\Debug\Chess.exe
+E:\VisualProject\sfml1\newChess\x64\Debug\Chess.exe

@@ -98,21 +98,40 @@ public:
         Text.clear();
     }
 
-    void PressedPlayMenu(bool *CreadFigure,std::string *ColorPlayr) {
-        if (Btr.size() != 0)
+    void PressedPlayMenu(bool* ptr_PlayLogic, std::vector<Pawn> &Pawns) {
+        bool Temporary = false;
+        if (Btr.size() != 0) {
             if (Btr[0].getGlobalBounds().contains(mousePositionPres)) {
                 CreatChessBoard(1);
-                *CreadFigure = true;
-                *ColorPlayr = "white";
+                *ptr_PlayLogic = true;
+                for (auto& figure : Pawns) {
+                    if (figure.getPosition_F() == "down")
+                        figure.setColor("white");
+                    if (figure.getPosition_F() == "up")
+                        figure.setColor("black");
+                }
+                Temporary = true;
                 AllClear();
             }
             else if (Btr[1].getGlobalBounds().contains(mousePositionPres)) {
                 CreatChessBoard(0);
-                *CreadFigure = true;
-                *ColorPlayr = "black";
+                *ptr_PlayLogic = true;
+
+                for (auto& figure : Pawns) {
+                    if (figure.getPosition_F() == "down")
+                        figure.setColor("blcak");
+                    if (figure.getPosition_F() == "up")
+                        figure.setColor("white");
+
+                }
+                Temporary = true;
                 AllClear();
             }
+            if (Temporary)
+                for (auto& figure : Pawns) {
+                    figure.CredPawn();
+                }
+        }
     }
-    
 };
 #endif //CHESS_PLAYMENU_H

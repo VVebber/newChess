@@ -37,6 +37,7 @@
     <None Include="sfml-system-2.dll" />
     <None Include="sfml-system-d-2.dll" />
     <None Include="sfml-window-2.dll" />
+    <None Include=".gitignore" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="window\PlayMenu.h">
@@ -45,26 +46,11 @@
     <ClInclude Include="window\MainMenu.h">
       <Filter>Исходные файлы\window</Filter>
     </ClInclude>
-    <ClInclude Include="ChessPieces\King.h">
-      <Filter>Исходные файлы\ChessPieces</Filter>
-    </ClInclude>
     <ClInclude Include="ChessPieces\Pawn.h">
-      <Filter>Исходные файлы\ChessPieces</Filter>
-    </ClInclude>
-    <ClInclude Include="ChessPieces\Queen.h">
       <Filter>Исходные файлы\ChessPieces</Filter>
     </ClInclude>
     <ClInclude Include="GameLogic.h">
       <Filter>Исходные файлы</Filter>
-    </ClInclude>
-    <ClInclude Include="ChessPieces\Rook.h">
-      <Filter>Исходные файлы\ChessPieces</Filter>
-    </ClInclude>
-    <ClInclude Include="ChessPieces\Bishop.h">
-      <Filter>Исходные файлы\ChessPieces</Filter>
-    </ClInclude>
-    <ClInclude Include="ChessPieces\Knight.h">
-      <Filter>Исходные файлы\ChessPieces</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
