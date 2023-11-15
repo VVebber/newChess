@@ -545,6 +545,7 @@ void FigureGo(std::vector<T1>& figure, int* sh, std::string* TypeFigure, bool* P
         if (figure[i].Figure[0].getGlobalBounds().contains(figure[i].getMousePositionPres())) {
             *sh = i;
             *TypeFigure = figure[i].getTypeFigure_F();
+            //std::cout<<"x="<<figure[*sh].Figure[0].getPosition().x<<"y="<<figure[*sh].Figure[0].getPosition().y<<"\n";
             *Press = true;
             break;
         }

@@ -144,8 +144,12 @@ public:
         }
     }
 
-    void ChessСoordinates(){
-
-    }
+/*    std::string ChessСoordinates(){
+//x =123 y 626 A1  (конда белыми) H8 черными
+        std::string result;
+        if(Figure[0].get)
+        result = (Color == "white") ? "A1" : "H8";
+        return result;
+    }*/
 };
 #endif //CHESS_PAWN_H

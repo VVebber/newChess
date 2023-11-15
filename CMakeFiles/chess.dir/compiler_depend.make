@@ -741,6 +741,7 @@ CMakeFiles/chess.dir/main.cpp.o: main.cpp \
   ChessPieces/Pawn.h \
   window/MainMenu.h \
   window/PlayMenu.h \
+  window/Settings.h \
   /opt/homebrew/include/SFML/Config.hpp \
   /opt/homebrew/include/SFML/Graphics.hpp \
   /opt/homebrew/include/SFML/Graphics/BlendMode.hpp \
@@ -843,6 +844,8 @@ CMakeFiles/chess.dir/main.cpp.o: main.cpp \
 
 /opt/homebrew/include/SFML/Window/Clipboard.hpp:
 
+/opt/homebrew/include/SFML/Window.hpp:
+
 /opt/homebrew/include/SFML/System/Vector3.inl:
 
 /opt/homebrew/include/SFML/System/Utf.inl:
@@ -926,6 +929,12 @@ window/MainMenu.h:
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk/usr/include/c++/v1/locale.h:
 
 GameLogic.h:
+
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk/usr/include/c++/v1/__algorithm/ranges_reverse.h:
+
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk/usr/include/c++/v1/__type_traits/remove_cvref.h:
+
+window/Settings.h:
 
 /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/14.0.3/include/stddef.h:
 
@@ -1460,8 +1469,6 @@ ChessPieces/Pawn.h:
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk/usr/include/c++/v1/__type_traits/alignment_of.h:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk/usr/include/c++/v1/__type_traits/add_lvalue_reference.h:
-
-/opt/homebrew/include/SFML/Window.hpp:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk/usr/include/sys/_pthread/_pthread_rwlock_t.h:
 
@@ -2008,10 +2015,6 @@ window/PlayMenu.h:
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk/usr/include/c++/v1/__type_traits/is_trivially_move_constructible.h:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk/usr/include/c++/v1/__algorithm/ranges_remove_copy.h:
-
-/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk/usr/include/c++/v1/__algorithm/ranges_reverse.h:
-
-/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk/usr/include/c++/v1/__type_traits/remove_cvref.h:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk/usr/include/c++/v1/__algorithm/is_sorted.h:
 

@@ -742,6 +742,7 @@ CMakeFiles/chess.dir/main.cpp.o
  /Users/danilmalyshev/Desktop/MyProgect/newChess/ChessPieces/Pawn.h
  /Users/danilmalyshev/Desktop/MyProgect/newChess/window/MainMenu.h
  /Users/danilmalyshev/Desktop/MyProgect/newChess/window/PlayMenu.h
+ /Users/danilmalyshev/Desktop/MyProgect/newChess/window/Settings.h
  /opt/homebrew/include/SFML/Config.hpp
  /opt/homebrew/include/SFML/Graphics.hpp
  /opt/homebrew/include/SFML/Graphics/BlendMode.hpp

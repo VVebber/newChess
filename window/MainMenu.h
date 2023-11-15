@@ -7,8 +7,8 @@
 
 class MainMenu {
 protected:
-    const float SizeX = 60;
-    const float SizeY = 300;
+    float SizeX = 60;
+    float SizeY = 300;
 
     std::vector<sf::RectangleShape> Buttons;
     std::vector<sf::Texture> Texture;
@@ -21,6 +21,9 @@ protected:
     sf::Vector2f MousePositionHover;
 
     int quantity;
+
+    int MaxWinSizeX = 0;
+    int MaxWinSizeY = 0;
 public:
     MainMenu(std::vector<sf::Texture> p_Texture = {}, int p_quantli = 0, std::vector<sf::Font> p_font = {}) {
 
@@ -34,12 +37,12 @@ public:
     }
 
     void CreatBrtMainMenu() {
-        float PositionY = 150;
+        float PositionY = 10;
+        getSizeButton();
         for (int i = 0; i < quantity; i++) {
             sf::RectangleShape button(sf::Vector2f(SizeY, SizeX));
             button.setFillColor(sf::Color(211, 211, 211));
-            button.setPosition(sf::Vector2f(540, PositionY));
-
+            button.setPosition(sf::Vector2f((MaxWinSizeX / 2.1) - (SizeX / 2), (12 * MaxWinSizeY) / 100 + PositionY));
             PositionY += SizeX + 10;
 
             button.setOutlineThickness(1);
@@ -111,6 +114,18 @@ public:
 
     void getEvent(sf::Event newEvent) {
         event = newEvent;
+    }
+
+    void getSizeButton(){
+        float Percent_X = 5, Percent_Y = 29;
+        SizeX = (Percent_X * MaxWinSizeX) / 100;
+        SizeY = (Percent_Y * MaxWinSizeY) / 100;
+    }
+
+    void getMaxWin(int newMaxWinSizeX, int newMaxWinSizeY){
+        MaxWinSizeX = newMaxWinSizeX;
+        MaxWinSizeY = newMaxWinSizeY;
+
     }
 
     void getMousePositionPres(sf::Vector2f newMousePosition) {

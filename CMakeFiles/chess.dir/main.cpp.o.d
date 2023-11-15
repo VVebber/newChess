@@ -1,7 +1,5 @@
 CMakeFiles/chess.dir/main.cpp.o: \
   /Users/danilmalyshev/Desktop/MyProgect/newChess/main.cpp \
-  /opt/homebrew/include/SFML/Graphics.hpp \
-  /opt/homebrew/include/SFML/Window.hpp \
   /opt/homebrew/include/SFML/System.hpp \
   /opt/homebrew/include/SFML/Config.hpp \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk/usr/include/TargetConditionals.h \
@@ -758,6 +756,8 @@ CMakeFiles/chess.dir/main.cpp.o: \
   /opt/homebrew/include/SFML/System/Vector2.inl \
   /opt/homebrew/include/SFML/System/Vector3.hpp \
   /opt/homebrew/include/SFML/System/Vector3.inl \
+  /opt/homebrew/include/SFML/Graphics.hpp \
+  /opt/homebrew/include/SFML/Window.hpp \
   /opt/homebrew/include/SFML/Window/Clipboard.hpp \
   /opt/homebrew/include/SFML/Window/Export.hpp \
   /opt/homebrew/include/SFML/Window/Context.hpp \
@@ -813,5 +813,6 @@ CMakeFiles/chess.dir/main.cpp.o: \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk/usr/include/c++/v1/istream \
   /Users/danilmalyshev/Desktop/MyProgect/newChess/window/PlayMenu.h \
   /Users/danilmalyshev/Desktop/MyProgect/newChess/window/../ChessPieces/Pawn.h \
+  /Users/danilmalyshev/Desktop/MyProgect/newChess/window/Settings.h \
   /Users/danilmalyshev/Desktop/MyProgect/newChess/ChessPieces/Pawn.h \
   /Users/danilmalyshev/Desktop/MyProgect/newChess/GameLogic.h

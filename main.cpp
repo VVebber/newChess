@@ -1,8 +1,10 @@
+#include <SFML/System.hpp>
 #include <SFML/Graphics.hpp>
 
 //Wondows
 #include "window/MainMenu.h"
 #include "window/PlayMenu.h"
+#include "window/Settings.h"
 
 //Fige
 #include "ChessPieces/Pawn.h"
@@ -17,11 +19,20 @@ void CreatePawn(std::vector <Pawn> &, int, sf::Texture &);
 void F_CreatOject(std::vector<Pawn>&,  std::vector <sf::Texture>&,std::string, int, int);
 
 int main() {
+    Senttings settings;
+#if defined(__ANDROID__)
+    settings.setTypeDevise("Android");
+#elif defined(SFML_SYSTEM_WINDOWS)
+    settings.setTypeDevise("Windows");
+#elif defined(SFML_SYSTEM_LINUX)
+    settings.setTypeDevise("Linux");
+#elif defined(SFML_SYSTEM_MACOS)
+    settings.setTypeDevise("macOS");
+#else
+    settings.setTypeDevise("Unknown OS");
+#endif
 
     sf::RenderWindow win(sf::VideoMode(1280, 960), L"Chess");
-    sf::RectangleShape Bekgraund;
-
-    Bekgraund.setSize(sf::Vector2f(1290, 960));
 
     int Quant_Players = 2;
     int NPDGT = 16; // number of pieces depending on game type(кол-во фигур от тира игры классика - 16)
@@ -54,6 +65,8 @@ int main() {
     std::vector <std::string> FileNamesBekgr = {"images/background.png"};
     std::vector <sf::Texture> TxBekgraund;
     DownTX(TxBekgraund, FileNamesBekgr);
+    settings.setTxBackground(TxBekgraund);
+    settings.CreatBackground();
 
     std::vector <std::string> FileNamesChessBoard = {"images/ChessBoard/WhiteBlack_1.png",
                                                      "images/ChessBoard/WhiteBlack_2.png"};
@@ -84,12 +97,12 @@ int main() {
     std::vector <std::string> FileNamesBishops = {"images/Bishops/WhiteBishop.png", "images/Bishops/BlackBishop.png"};
     DownTX(TxBishop, FileNamesBishops);
 
-    //Dunlaud TX in Ojeck
-    Bekgraund.setTexture(&TxBekgraund[0]);
-
     //cread button
     MainMenu mainMenu({}, 3, {}); //|0 - textur| 3 - button| 0 - font|
     PlayMenu playMenu({}, 3, {}, TxChessBoard);// 
+
+    mainMenu.getMaxWin(settings.getMaxWinSizeX(),settings.getMaxWinSizeY());
+    playMenu.getMaxWin(settings.getMaxWinSizeX(),settings.getMaxWinSizeY());
 
     mainMenu.CreatBrtMainMenu();
 
@@ -102,7 +115,6 @@ int main() {
     F_CreatOject(Pawns,TxKnight,"knights",Quant_Players,Quant_Knight);
     F_CreatOject(Pawns,TxBishop,"bishops",Quant_Players,Quant_Bishop);
 
-    std::cout<<"\n2|"<<Pawns.size();
 
     while (win.isOpen()) {
         sf::Event event{};
@@ -138,7 +150,7 @@ int main() {
         }
   
         win.clear();
-        win.draw(Bekgraund);
+        win.draw(settings.getBackground());
 
         mainMenu.SpawnBrt(win);
         mainMenu.SpawnText(win);
@@ -155,6 +167,7 @@ int main() {
 
         if (PlayLogic) {
             Logic(prt_NombeFigure, prt_TypeFigure, ptr_Press, ptr_Color, ptr_StrokeLock,Pawns);
+            playMenu.TimeWin(win);
         }
 
 
@@ -203,5 +216,4 @@ void F_CreatOject(std::vector<Pawn> &Pawns,  std::vector <sf::Texture> &TxFigure
         }
         Pawns.push_back(pawn);
     }
-    std::cout<<"\n|"<<Quant_Figur * Quant_Players;
 }
