@@ -143,5 +143,9 @@ public:
             Shape.setOutlineColor(sf::Color(0, 0, 0, 255));
         }
     }
+
+    void ChessСoordinates(){
+
+    }
 };
 #endif //CHESS_PAWN_H
