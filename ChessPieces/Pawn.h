@@ -10,7 +10,7 @@ private:
     float WPowStart = 558.9;
     float BPowStart = 220.4;
 
-    const float SizeSquare = 67.7;
+    float SizeSquare = 67.7;
     
     int Sh;
 
@@ -105,7 +105,7 @@ public:
         else if (TypeFigure == "rook")
             pawn.setPosition(56 + 67.7 * (Sh == 0 ? 8 : 1), (Position == "up" ? 85 + 67.7 * 1 : 85 + 67.7 * 8));
 
-        else if (TypeFigure == "knights")
+                else if (TypeFigure == "knights")
             pawn.setPosition(56 + 67.7 * (Sh == 0 ? 7 : 2), (Position == "up" ? 85 + 67.7 * 1 : 85 + 67.7 * 8));
 
         else if (TypeFigure == "bishops")
@@ -128,19 +128,18 @@ public:
     void CreadNewColor() {
         int integer = 100;
 
-        sf::Color Grin(124, 252, 0, 0);
-        sf::Color Red(255, 0, 0, 0);
-        sf::Color Aqua(0, 255, 255, 0);
+        sf::Color Green_1(124, 252, 0, 0);
+        sf::Color Green_2(173, 255, 47, 0);
+        sf::Color Red_1(255, 0, 0, 0);
 
         for (auto& Shape : shape) {
             sf::Color currentColor = Shape.getFillColor();
-            if(currentColor == Grin)
+            if(currentColor == Green_1)
                 Shape.setFillColor(sf::Color(124, 252, 0, integer));
-            else  if (currentColor == Red)
+            else  if (currentColor == Red_1)
                 Shape.setFillColor(sf::Color(255, 0, 0, integer));
-            else  if(currentColor == Aqua)
-                Shape.setFillColor(sf::Color(0, 255, 255, integer));
-
+            else if (currentColor == Green_2)
+                Shape.setFillColor(sf::Color(173, 255, 47, integer));
             Shape.setOutlineColor(sf::Color(0, 0, 0, 255));
         }
     }

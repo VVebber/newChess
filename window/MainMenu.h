@@ -6,19 +6,19 @@
 #include <string>
 
 class MainMenu {
-public:
+protected:
     const float SizeX = 60;
     const float SizeY = 300;
 
-    std::vector<sf::RectangleShape> Btr;
+    std::vector<sf::RectangleShape> Buttons;
     std::vector<sf::Texture> Texture;
-    std::vector<sf::Text> Text;
+    std::vector<sf::Text> Texts;
     std::vector<sf::Font> font;
 
     sf::Event event;
 
-    sf::Vector2f mousePositionPres;
-    sf::Vector2f mousePositionHover;
+    sf::Vector2f MousePositionPres;
+    sf::Vector2f MousePositionHover;
 
     int quantity;
 public:
@@ -33,14 +33,6 @@ public:
         quantity = p_quantli;
     }
 
-    void F_event(sf::Event CL_event) {
-        event = CL_event;
-    }
-
-    void F_mousePositionPres(sf::Vector2f CL_mousePosition) {
-        mousePositionPres = CL_mousePosition;
-    }
-
     void CreatBrtMainMenu() {
         float PositionY = 150;
         for (int i = 0; i < quantity; i++) {
@@ -52,15 +44,15 @@ public:
 
             button.setOutlineThickness(1);
             button.setOutlineColor(sf::Color(128, 128, 128));
-            Btr.push_back(button);
+            Buttons.push_back(button);
         }
-        if(Text.size() != 0)
+        if(false)
         CreatTxtMainMenu();
     }
 
     void CreatTxtMainMenu() {
         float PositionY = 150;
-        for (int i = 0; i < Text.size(); i++) {
+        for (int i = 0; i < Texts.size(); i++) {
             sf::Text text;
             text.setFont(font[0]);
             text.setCharacterSize(30);
@@ -82,48 +74,48 @@ public:
                     break;
             }
 
-            Text.push_back(text);
+            Texts.push_back(text);
         }
     }
 
     void SpawnBrt(sf::RenderWindow &win) {
-        for (auto &button: Btr) {
+        for (auto &button: Buttons) {
             win.draw(button);
         }
     }
 
     void SpawnText(sf::RenderWindow &win) {
-        for (auto &text: Text) {
+        for (auto &text: Texts) {
             win.draw(text);
         }
     }
 
     void hover(sf::Event event) {
-        if (event.type == sf::Event::MouseMoved) {
-            sf::Vector2f mousePosition(event.mouseMove.x, event.mouseMove.y);
-
-            for (int i = 0; i < Btr.size(); i++) {
-                Btr[i].getGlobalBounds().contains(mousePosition) ? Btr[i].setFillColor(sf::Color(128, 128, 128))
-                                                                 : Btr[i].setFillColor(sf::Color(211, 211, 211));
-                if(i < Text.size())
-                Btr[i].getGlobalBounds().contains(mousePosition) ? Text[i].setFillColor(sf::Color(211, 211, 211))
-                                                                 : Text[i].setFillColor(sf::Color(128, 128, 128));
-
-            }
-        }
+        return;
     }
 
     void PressedMainMenu(sf::RenderWindow& win, bool *CreadPlayMenu) {
-        if(Btr.size() != 0)
-        if (Btr[0].getGlobalBounds().contains(mousePositionPres)) {//Играть
-            *CreadPlayMenu = true;
-            Btr.clear();
-            Text.clear();
+        if (Buttons.size() != 0) {
+            if (Buttons[0].getGlobalBounds().contains(MousePositionPres)) {//Играть
+                *CreadPlayMenu = true;
+                Buttons.clear();
+                Texts.clear();
+            } else if (Buttons[2].getGlobalBounds().contains(MousePositionPres))//выход
+                win.close();
         }
-        else if (Btr[2].getGlobalBounds().contains(mousePositionPres))//выход
-            win.close();
     }
 
+    int setSizeButtons(){
+        return Buttons.size();
+    }
+
+    void getEvent(sf::Event newEvent) {
+        event = newEvent;
+    }
+
+    void getMousePositionPres(sf::Vector2f newMousePosition) {
+        MousePositionPres = newMousePosition;
+    }
 };
 
 #endif //CHESS_MAINMENU_H

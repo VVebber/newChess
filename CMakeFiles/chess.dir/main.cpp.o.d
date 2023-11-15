@@ -1,5 +1,5 @@
 CMakeFiles/chess.dir/main.cpp.o: \
-  /Users/danilmalyshev/Desktop/MyProgect/chess/main.cpp \
+  /Users/danilmalyshev/Desktop/MyProgect/newChess/main.cpp \
   /opt/homebrew/include/SFML/Graphics.hpp \
   /opt/homebrew/include/SFML/Window.hpp \
   /opt/homebrew/include/SFML/System.hpp \
@@ -808,15 +808,10 @@ CMakeFiles/chess.dir/main.cpp.o: \
   /opt/homebrew/include/SFML/Graphics/Sprite.hpp \
   /opt/homebrew/include/SFML/Graphics/Text.hpp \
   /opt/homebrew/include/SFML/Graphics/VertexBuffer.hpp \
-  /Users/danilmalyshev/Desktop/MyProgect/chess/window/MainMenu.h \
+  /Users/danilmalyshev/Desktop/MyProgect/newChess/window/MainMenu.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk/usr/include/c++/v1/iostream \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk/usr/include/c++/v1/istream \
-  /Users/danilmalyshev/Desktop/MyProgect/chess/window/PlayMenu.h \
-  /Users/danilmalyshev/Desktop/MyProgect/chess/window/../ChessPieces/Pawn.h \
-  /Users/danilmalyshev/Desktop/MyProgect/chess/ChessPieces/Pawn.h \
-  /Users/danilmalyshev/Desktop/MyProgect/chess/ChessPieces/King.h \
-  /Users/danilmalyshev/Desktop/MyProgect/chess/ChessPieces/Queen.h \
-  /Users/danilmalyshev/Desktop/MyProgect/chess/ChessPieces/Knight.h \
-  /Users/danilmalyshev/Desktop/MyProgect/chess/ChessPieces/Bishop.h \
-  /Users/danilmalyshev/Desktop/MyProgect/chess/ChessPieces/Rook.h \
-  /Users/danilmalyshev/Desktop/MyProgect/chess/GameLogic.h
+  /Users/danilmalyshev/Desktop/MyProgect/newChess/window/PlayMenu.h \
+  /Users/danilmalyshev/Desktop/MyProgect/newChess/window/../ChessPieces/Pawn.h \
+  /Users/danilmalyshev/Desktop/MyProgect/newChess/ChessPieces/Pawn.h \
+  /Users/danilmalyshev/Desktop/MyProgect/newChess/GameLogic.h

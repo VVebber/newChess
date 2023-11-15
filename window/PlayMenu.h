@@ -39,9 +39,9 @@ public:
 
             button.setOutlineThickness(1);
             button.setOutlineColor(sf::Color(128, 128, 128));
-            Btr.push_back(button);
+            Buttons.push_back(button);
         }
-        if(Text.size() != 0)
+        if(false)
         CreatTxtPlayMenu();
     }
 
@@ -62,7 +62,7 @@ public:
 
     void CreatTxtPlayMenu() {
         float PositionY = 150;
-        for (int i = 0; i < Btr.size(); i++) {
+        for (int i = 0; i < Buttons.size(); i++) {
             sf::Text text;
             text.setFont(font[0]);
             text.setCharacterSize(30);
@@ -89,19 +89,19 @@ public:
                     text.setString(L"История");
                     break;
             }
-            Text.push_back(text);
+            Texts.push_back(text);
         }
     }
 
     void AllClear() {
-        Btr.clear();
-        Text.clear();
+        Buttons.clear();
+        Texts.clear();
     }
 
     void PressedPlayMenu(bool* ptr_PlayLogic, std::vector<Pawn> &Pawns) {
         bool Temporary = false;
-        if (Btr.size() != 0) {
-            if (Btr[0].getGlobalBounds().contains(mousePositionPres)) {
+        if (Buttons.size() != 0) {
+            if (Buttons[0].getGlobalBounds().contains(MousePositionPres)) {
                 CreatChessBoard(1);
                 *ptr_PlayLogic = true;
                 for (auto& figure : Pawns) {
@@ -113,7 +113,7 @@ public:
                 Temporary = true;
                 AllClear();
             }
-            else if (Btr[1].getGlobalBounds().contains(mousePositionPres)) {
+            else if (Buttons[1].getGlobalBounds().contains(MousePositionPres)) {
                 CreatChessBoard(0);
                 *ptr_PlayLogic = true;
 

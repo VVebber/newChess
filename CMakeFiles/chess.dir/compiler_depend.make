@@ -736,12 +736,7 @@ CMakeFiles/chess.dir/main.cpp.o: main.cpp \
   /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/14.0.3/include/stdarg.h \
   /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/14.0.3/include/stddef.h \
   /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/14.0.3/include/stdint.h \
-  ChessPieces/Bishop.h \
-  ChessPieces/King.h \
-  ChessPieces/Knight.h \
   ChessPieces/Pawn.h \
-  ChessPieces/Queen.h \
-  ChessPieces/Rook.h \
   GameLogic.h \
   ChessPieces/Pawn.h \
   window/MainMenu.h \
@@ -848,13 +843,7 @@ CMakeFiles/chess.dir/main.cpp.o: main.cpp \
 
 /opt/homebrew/include/SFML/Window/Clipboard.hpp:
 
-/opt/homebrew/include/SFML/Window.hpp:
-
 /opt/homebrew/include/SFML/System/Vector3.inl:
-
-/opt/homebrew/include/SFML/System/Vector3.hpp:
-
-/opt/homebrew/include/SFML/System/Vector2.inl:
 
 /opt/homebrew/include/SFML/System/Utf.inl:
 
@@ -920,6 +909,8 @@ CMakeFiles/chess.dir/main.cpp.o: main.cpp \
 
 /opt/homebrew/include/SFML/Graphics/Glyph.hpp:
 
+/opt/homebrew/include/SFML/Graphics/Font.hpp:
+
 /opt/homebrew/include/SFML/Graphics/Export.hpp:
 
 /opt/homebrew/include/SFML/System/Utf.hpp:
@@ -935,16 +926,6 @@ window/MainMenu.h:
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk/usr/include/c++/v1/locale.h:
 
 GameLogic.h:
-
-/opt/homebrew/include/SFML/Graphics/Font.hpp:
-
-/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk/usr/include/c++/v1/__type_traits/make_signed.h:
-
-ChessPieces/Rook.h:
-
-ChessPieces/King.h:
-
-ChessPieces/Bishop.h:
 
 /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/14.0.3/include/stddef.h:
 
@@ -1166,8 +1147,6 @@ ChessPieces/Bishop.h:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk/usr/include/c++/v1/limits.h:
 
-ChessPieces/Knight.h:
-
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk/usr/include/c++/v1/wchar.h:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk/usr/include/c++/v1/limits:
@@ -1282,6 +1261,8 @@ ChessPieces/Knight.h:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk/usr/include/c++/v1/__type_traits/make_unsigned.h:
 
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk/usr/include/c++/v1/__type_traits/make_signed.h:
+
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk/usr/include/c++/v1/__iterator/back_insert_iterator.h:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk/usr/include/c++/v1/__type_traits/is_pod.h:
@@ -1311,6 +1292,8 @@ ChessPieces/Knight.h:
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk/usr/include/c++/v1/memory:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk/usr/include/c++/v1/__type_traits/is_unbounded_array.h:
+
+/opt/homebrew/include/SFML/System/Vector3.hpp:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk/usr/include/c++/v1/__iterator/sortable.h:
 
@@ -1477,6 +1460,8 @@ ChessPieces/Pawn.h:
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk/usr/include/c++/v1/__type_traits/alignment_of.h:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk/usr/include/c++/v1/__type_traits/add_lvalue_reference.h:
+
+/opt/homebrew/include/SFML/Window.hpp:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk/usr/include/sys/_pthread/_pthread_rwlock_t.h:
 
@@ -2186,6 +2171,8 @@ window/PlayMenu.h:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk/usr/include/c++/v1/__algorithm/ranges_equal_range.h:
 
+/opt/homebrew/include/SFML/System/Vector2.inl:
+
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk/usr/include/c++/v1/__algorithm/ranges_count_if.h:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk/usr/include/c++/v1/__algorithm/copy_backward.h:
@@ -2387,8 +2374,6 @@ window/PlayMenu.h:
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk/usr/include/c++/v1/__iterator/projected.h:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk/usr/include/c++/v1/__functional/bind.h:
-
-ChessPieces/Queen.h:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk/usr/include/c++/v1/__algorithm/max_element.h:
 

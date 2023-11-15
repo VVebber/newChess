@@ -107,8 +107,8 @@ int main() {
     while (win.isOpen()) {
         sf::Event event{};
 
-        mainMenu.F_event(event);
-        playMenu.F_event(event);
+        mainMenu.getEvent(event);
+        playMenu.getEvent(event);
 
         while (win.pollEvent(event)) {
             if (event.type == sf::Event::Closed)
@@ -121,8 +121,8 @@ int main() {
                 if (event.mouseButton.button == sf::Mouse::Left) {
                     sf::Vector2f mousePosition = sf::Vector2f(event.mouseButton.x, event.mouseButton.y);
                     //копирование нажотой позиции в классы 
-                    mainMenu.F_mousePositionPres(mousePosition);
-                    playMenu.F_mousePositionPres(mousePosition);
+                    mainMenu.getMousePositionPres(mousePosition);
+                    playMenu.getMousePositionPres(mousePosition);
 
                     for (auto &pawn: Pawns)
                         pawn.F_mousePositionPres(mousePosition);
@@ -132,7 +132,7 @@ int main() {
                 }
         }
         //создание кнопок в меню PlayMenu
-        if (CreadPlayMenu && (mainMenu.Btr.size() == 0)) {
+        if (CreadPlayMenu && (mainMenu.setSizeButtons() == 0)) {
             CreadPlayMenu = false;
             playMenu.CreatBrtPlayMenu();
         }

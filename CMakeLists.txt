@@ -10,10 +10,7 @@ add_executable(chess main.cpp
         window/MainMenu.h
         window/PlayMenu.h
         ChessPieces/Pawn.h
-        ChessPieces/Pawn.h
         GameLogic.h
-        ChessPieces/Queen.h
-        ChessPieces/King.h
 )
 
 target_link_libraries(chess sfml-graphics sfml-audio)

@@ -45,6 +45,8 @@ bool ColorShape(Pawn figure,std::vector<T1>&, sf::CircleShape&);
 void CreadShape(sf::CircleShape&);
 void CreadShapeTest(sf::CircleShape&);
 
+template <class T1, class T2>
+int Killing(std::vector<T1>&,T2, int, int);
 
 struct ALLFigure {
     std::string Position = "";    //up or down
@@ -96,9 +98,8 @@ void Logic(int* NombeFigure, std::string* TypeFigure, bool* Press, std::string* 
     LogicDownLeft(AllFigur, Pawns);
     LogicDownRight(AllFigur, Pawns);
 
+    LogicKnights(AllFigur,Pawns);
     FigureGo(Pawns, NombeFigure, TypeFigure, Press, Color, StrokeLock);
-
-    //killing(Pawns, killFigure);
 }
 
 void CreadShape(sf::CircleShape& shape) {
@@ -118,8 +119,8 @@ bool ColorShape(Pawn figure, std::vector<T1>& ALLFigure, sf::CircleShape& shape)
     for (int j = 0; j < ALLFigure.size(); j++) {
         if (int(shape.getPosition().x) == int(ALLFigure[j].CoordinatesFigure[0]) &&
             int(shape.getPosition().y) == int(ALLFigure[j].CoordinatesFigure[1])) {
-            figure.getPosition_F() == ALLFigure[j].Position ? shape.setFillColor(sf::Color(173, 255, 47, 90)) :
-                shape.setFillColor(sf::Color(255, 0, 0, 90));
+            figure.getPosition_F() == ALLFigure[j].Position ? shape.setFillColor(sf::Color(173, 255, 47, 0)) :
+                shape.setFillColor(sf::Color(255, 0, 0, 0));
             return true;
         }
     }
@@ -205,7 +206,8 @@ template <class T1, class T2>
 void LogicUpLeft(std::vector<T1>& ALLFigure, std::vector<T2>& Figure) {
     for (auto& figure : Figure) {
         bool Continue = false;
-        if (figure.getPosition_F() == "up" && figure.getTypeFigure_F() == "pawn")
+        if (figure.getTypeFigure_F() == "pawn" || figure.getTypeFigure_F() =="rook" ||
+            figure.getTypeFigure_F() == "knights")
             continue;
 
         for (int i = 0; i < 8; i++) {
@@ -247,7 +249,8 @@ template <class T1, class T2>
 void LogicUpRight(std::vector<T1>& ALLFigure, std::vector<T2>& Figure) {
     for (auto& figure : Figure) {
         bool Continue = false;
-        if (figure.getPosition_F() == "up" && figure.getTypeFigure_F() == "pawn")
+        if (figure.getTypeFigure_F() == "pawn" || figure.getTypeFigure_F() =="rook" ||
+            figure.getTypeFigure_F() == "knights")
             continue;
 
         for (int i = 0; i < 8; i++) {
@@ -284,7 +287,6 @@ void LogicUpRight(std::vector<T1>& ALLFigure, std::vector<T2>& Figure) {
         }
     }
 }
-
 
 template <class T1, class T2>
 void LogicDown(std::vector<T1>& ALLFigure, std::vector<T2>& Figure) {
@@ -332,7 +334,8 @@ template <class T1, class T2>
 void LogicDownLeft(std::vector<T1>& ALLFigure, std::vector<T2>& Figure) {
     for (auto& figure : Figure) {
         bool Continue = false;
-        if (figure.getPosition_F() == "up" && figure.getTypeFigure_F() == "pawn")
+        if (figure.getTypeFigure_F() == "pawn" || figure.getTypeFigure_F() == "rook" ||
+        figure.getTypeFigure_F() == "knights")
             continue;
 
         for (int i = 0; i < 8; i++) {
@@ -374,7 +377,8 @@ template <class T1, class T2>
 void LogicDownRight(std::vector<T1>& ALLFigure, std::vector<T2>& Figure) {
     for (auto& figure : Figure) {
         bool Continue = false;
-        if (figure.getPosition_F() == "up" && figure.getTypeFigure_F() == "pawn")
+        if (figure.getTypeFigure_F() == "pawn" || figure.getTypeFigure_F() == "rook" ||
+            figure.getTypeFigure_F() == "knights")
             continue;
 
         for (int i = 0; i < 8; i++) {
@@ -416,7 +420,8 @@ template <class T1, class T2>
 void LogicLeft(std::vector<T1>& ALLFigure, std::vector<T2>& Figure) {
     for (auto& figure : Figure) {
         bool Continue = false;
-        if (figure.getPosition_F() == "down" && figure.getTypeFigure_F() == "pawn")
+        if (figure.getTypeFigure_F() == "bishops" || figure.getTypeFigure_F() == "pawn" ||
+            figure.getTypeFigure_F() == "knights")
             continue;
 
         for (int i = 0; i < 8; i++) {
@@ -456,7 +461,8 @@ template <class T1, class T2>
 void LogicRight(std::vector<T1>& ALLFigure, std::vector<T2>& Figure) {
     for (auto& figure : Figure) {
         bool Continue = false;
-        if (figure.getPosition_F() == "down" && figure.getTypeFigure_F() == "pawn")
+        if (figure.getTypeFigure_F() == "bishops" || figure.getTypeFigure_F() == "pawn" ||
+            figure.getTypeFigure_F() == "knights")
             continue;
 
         for (int i = 0; i < 8; i++) {
@@ -492,27 +498,12 @@ void LogicRight(std::vector<T1>& ALLFigure, std::vector<T2>& Figure) {
     }
 }
 
-
-/*
-
-template <class T1>
-void killing(std::vector<T1>& Figure, KillFigure kill) {
-    for (auto& dead : Figure) {
-        if (kill.Color != dead.color)
-            continue;
-        if (kill.Color == dead.color && (int(kill.CoordinatesFigure[0]) == int(dead.Figure[0].getPosition().x)
-            && int(kill.CoordinatesFigure[1]) == int(dead.Figure[0].getPosition().y))) {
-            dead.Figure[0].setPosition(0,0);
-            dead.MarkOfDeath == "dead";
-        }
-    }
-} */
-/*
 template <class T1, class T2>
 void LogicKnights(std::vector<T1>& ALLFigure, std::vector<T2>& Figure) {
 
-    if (Figure[0].TypeFigure == "knights") {
         for (auto& figure : Figure) {
+            if (figure.getTypeFigure_F() != "knights")
+                continue;
             bool Continue = false;
             for (int i = 0; i < 8; i++) {
                 sf::CircleShape shape(30, 10);
@@ -528,19 +519,8 @@ void LogicKnights(std::vector<T1>& ALLFigure, std::vector<T2>& Figure) {
                 case 7: shape.setPosition(figure.Figure[0].getPosition().x - 67.7, figure.Figure[0].getPosition().y - 67.7 * 2); break;
                 }
                 CreadShape(shape);
+                Continue = ColorShape(figure, ALLFigure, shape);
 
-                for (int j = 0; j < ALLFigure.size(); j++) {
-                    if (int(shape.getPosition().x) == int(ALLFigure[j].CoordinatesFigure[0]) &&
-                        int(shape.getPosition().y) == int(ALLFigure[j].CoordinatesFigure[1]) &&
-                        ALLFigure[j].Position == "up") {
-                        shape.setFillColor(sf::Color(255, 0, 0, 0));
-                    }
-                    if (int(shape.getPosition().x) == int(ALLFigure[j].CoordinatesFigure[0]) &&
-                        int(shape.getPosition().y) == int(ALLFigure[j].CoordinatesFigure[1]) &&
-                        ALLFigure[j].Position == "down") {
-                        shape.setFillColor(sf::Color(0, 255, 255, 0));
-                    }
-                }
                 if (shape.getPosition().y > 650 || shape.getPosition().x > 665 ||
                     shape.getPosition().y < 150 || shape.getPosition().x < 150) {
                     continue;
@@ -550,16 +530,14 @@ void LogicKnights(std::vector<T1>& ALLFigure, std::vector<T2>& Figure) {
 
                 if (Continue) {
                     Continue = false;
-                    break;
                 }
             }
         }
     }
-}
-*/
 
 template <typename T1>
 void FigureGo(std::vector<T1>& figure, int* sh, std::string* TypeFigure, bool* Press, std::string* Color, bool *StrokeLock) {
+    int l = -1;
     for (int i = 0; i < figure.size(); i++) {
         if (*Color == figure[i].getColor_F())
             continue;
@@ -571,7 +549,7 @@ void FigureGo(std::vector<T1>& figure, int* sh, std::string* TypeFigure, bool* P
             break;
         }
     }
-    if (*Press) 
+    if (*Press)
         if (*TypeFigure == figure[*sh].getTypeFigure_F()) {
             figure[*sh].CreadNewColor();
             for (int i = 0; i < figure[*sh].shape.size(); i++)
@@ -579,14 +557,27 @@ void FigureGo(std::vector<T1>& figure, int* sh, std::string* TypeFigure, bool* P
                     figure[*sh].Figure[0].setPosition(figure[*sh].shape[i].getPosition().x, figure[*sh].shape[i].getPosition().y);
                     *Press = false;
                     *StrokeLock = true;
-                                      
                     if (*Color == "white")
                         *Color = "black";
                     else if (*Color == "black")
                         *Color = "white";
-
-                }
+                    l = Killing(figure,figure[*sh],i, *sh);
+                   }
         }
+    if(l != -1)
+        figure.erase(figure.begin() + l);
+}
+
+template <class T1, class T2>
+int  Killing(std::vector<T1>& Figure,T2 figure, int chShape, int chFigure) {
+    for (int i = 0; i < Figure.size(); i++) {
+        if(i == chFigure)
+            continue;
+        if (int(figure.shape[chShape].getPosition().x) == int(Figure[i].Figure[0].getPosition().x) &&
+            int(figure.shape[chShape].getPosition().y) == int(Figure[i].Figure[0].getPosition().y))
+            return i;
+    }
+    return -1;
 }
 
 template <typename T1, typename T2>
