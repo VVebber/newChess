@@ -1,6 +1,7 @@
 #ifndef CHESS_GAMELOGIC_H
 #define CHESS_GAMELOGIC_H
 
+#include "window/PlayMenu.h"
 #include "ChessPieces/Pawn.h"
 #include <iostream>
 
@@ -26,7 +27,7 @@ template <class T1, class T2>
 void LogicDown(std::vector<T1>&, std::vector<T2>&);
 
 template <typename T1>
-void FigureGo(std::vector<T1>& , int* , std::string*, bool *, std::string *, bool*);
+void FigureGo(PlayMenu&,std::vector<T1>& , int* , std::string*, bool *, std::string *, bool*,int*);
 
 template <class T1, class T2>
 void LogicLeft(std::vector<T1>& ALLFigure, std::vector<T2>& Figure);
@@ -75,8 +76,8 @@ struct ALLFigure {
 };
 
 
-void Logic(int* NombeFigure, std::string* TypeFigure, bool* Press, std::string* Color, bool* StrokeLock,
-    std::vector<Pawn>& Pawns) {
+void Logic(int* NombeFigure, std::string* TypeFigure, bool* Press, std::string* Color, bool* StrokeLock,int *MoverCounter,
+    std::vector<Pawn>& Pawns, PlayMenu &playMenu) {
 
     std::vector<ALLFigure> AllFigur;
     AllFigur.clear();
@@ -99,7 +100,7 @@ void Logic(int* NombeFigure, std::string* TypeFigure, bool* Press, std::string* 
     LogicDownRight(AllFigur, Pawns);
 
     LogicKnights(AllFigur,Pawns);
-    FigureGo(Pawns, NombeFigure, TypeFigure, Press, Color, StrokeLock);
+    FigureGo(playMenu, Pawns, NombeFigure, TypeFigure, Press, Color, StrokeLock,MoverCounter);
 }
 
 void CreadShape(sf::CircleShape& shape) {
@@ -536,8 +537,9 @@ void LogicKnights(std::vector<T1>& ALLFigure, std::vector<T2>& Figure) {
     }
 
 template <typename T1>
-void FigureGo(std::vector<T1>& figure, int* sh, std::string* TypeFigure, bool* Press, std::string* Color, bool *StrokeLock) {
+void FigureGo(PlayMenu &playMenu,std::vector<T1>& figure, int* sh, std::string* TypeFigure, bool* Press, std::string* Color, bool *StrokeLock,int *MoverCounter) {
     int l = -1;
+    std::string S = " -> ";
     for (int i = 0; i < figure.size(); i++) {
         if (*Color == figure[i].getColor_F())
             continue;
@@ -545,7 +547,9 @@ void FigureGo(std::vector<T1>& figure, int* sh, std::string* TypeFigure, bool* P
         if (figure[i].Figure[0].getGlobalBounds().contains(figure[i].getMousePositionPres())) {
             *sh = i;
             *TypeFigure = figure[i].getTypeFigure_F();
-            //std::cout<<"x="<<figure[*sh].Figure[0].getPosition().x<<"y="<<figure[*sh].Figure[0].getPosition().y<<"\n";
+            playMenu.getChessCordStart(playMenu.Cord(figure[*sh]));
+            std::cout<<figure[*sh].getColor_F()<<" | "<<figure[*sh].getPosition_F()<<"\n";
+            std::cout<<"x="<<figure[*sh].Figure[0].getPosition().x<<"y="<<figure[*sh].Figure[0].getPosition().y<<"\n";
             *Press = true;
             break;
         }
@@ -555,15 +559,18 @@ void FigureGo(std::vector<T1>& figure, int* sh, std::string* TypeFigure, bool* P
             figure[*sh].CreadNewColor();
             for (int i = 0; i < figure[*sh].shape.size(); i++)
                 if (figure[*sh].shape[i].getGlobalBounds().contains(figure[*sh].getMousePositionPres())) {
-                    figure[*sh].Figure[0].setPosition(figure[*sh].shape[i].getPosition().x, figure[*sh].shape[i].getPosition().y);
+                    figure[*sh].Figure[0].setPosition(figure[*sh].shape[i].getPosition().x,figure[*sh].shape[i].getPosition().y);
+                    playMenu.getChessCordEnd(S + playMenu.Cord(figure[*sh]));
                     *Press = false;
                     *StrokeLock = true;
                     if (*Color == "white")
                         *Color = "black";
                     else if (*Color == "black")
                         *Color = "white";
-                    l = Killing(figure,figure[*sh],i, *sh);
-                   }
+                    l = Killing(figure, figure[*sh], i, *sh);
+                    playMenu.DownChessCords_txt(*MoverCounter);
+                    *MoverCounter += playMenu.setMoverCounter_int();
+                }
         }
     if(l != -1)
         figure.erase(figure.begin() + l);
@@ -591,6 +598,7 @@ void LogicKing(std::vector<T1>& Figur, std::vector<T2>& AllFigure, bool* StrokeL
                         int(king.Figure[0].getPosition().y) == int(AllFigure[i].CoordinatesShape[j + 1]))
                         *StrokeLock = false;
         }
-
 }
+
+
 #endif //CHESS_GAMELOGIC_H

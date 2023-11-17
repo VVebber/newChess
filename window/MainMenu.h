@@ -36,6 +36,15 @@ public:
         quantity = p_quantli;
     }
 
+    void WinButton(sf::RenderWindow &win){
+        for (auto &button: Buttons) {
+            win.draw(button);
+        }
+        for (auto &text: Texts) {
+            win.draw(text);
+        }
+    }
+
     void CreatBrtMainMenu() {
         float PositionY = 10;
         getSizeButton();
@@ -49,19 +58,18 @@ public:
             button.setOutlineColor(sf::Color(128, 128, 128));
             Buttons.push_back(button);
         }
-        if(false)
+        if(true)
         CreatTxtMainMenu();
     }
 
     void CreatTxtMainMenu() {
-        float PositionY = 150;
-        for (int i = 0; i < Texts.size(); i++) {
+        float PositionY = 10;
+        for (int i = 0; i < Buttons.size(); i++) {
             sf::Text text;
             text.setFont(font[0]);
             text.setCharacterSize(30);
             text.setFillColor(sf::Color(128, 128, 128));
-            text.setPosition(sf::Vector2f(540 + 10, PositionY + 10));
-
+            text.setPosition(sf::Vector2f((MaxWinSizeX / 2) - (SizeX / 2), (13 * MaxWinSizeY) / 100 + PositionY));
             text.setOutlineThickness(1);
             text.setOutlineColor(sf::Color(0, 0, 0));
             PositionY += SizeX + 10;
@@ -81,30 +89,12 @@ public:
         }
     }
 
-    void SpawnBrt(sf::RenderWindow &win) {
-        for (auto &button: Buttons) {
-            win.draw(button);
-        }
-    }
-
-    void SpawnText(sf::RenderWindow &win) {
-        for (auto &text: Texts) {
-            win.draw(text);
-        }
-    }
-
     void hover(sf::Event event) {
-        return;
-    }
-
-    void PressedMainMenu(sf::RenderWindow& win, bool *CreadPlayMenu) {
-        if (Buttons.size() != 0) {
-            if (Buttons[0].getGlobalBounds().contains(MousePositionPres)) {//Играть
-                *CreadPlayMenu = true;
-                Buttons.clear();
-                Texts.clear();
-            } else if (Buttons[2].getGlobalBounds().contains(MousePositionPres))//выход
-                win.close();
+        if (event.type == sf::Event::MouseMoved) {
+            sf::Vector2f mousePosition(event.mouseMove.x, event.mouseMove.y);
+            for (int i = 0; i < Buttons.size(); i++)
+                Buttons[i].getGlobalBounds().contains(mousePosition) ? Buttons[i].setFillColor(sf::Color(112, 128, 144))
+                                                                     : Buttons[i].setFillColor(sf::Color(211, 211, 211));
         }
     }
 
@@ -130,6 +120,17 @@ public:
 
     void getMousePositionPres(sf::Vector2f newMousePosition) {
         MousePositionPres = newMousePosition;
+    }
+
+    void PressedMainMenu(sf::RenderWindow& win, bool *CreadPlayMenu) {
+        if (Buttons.size() != 0) {
+            if (Buttons[0].getGlobalBounds().contains(MousePositionPres)) {//Играть
+                *CreadPlayMenu = true;
+                Buttons.clear();
+                Texts.clear();
+            } else if (Buttons[2].getGlobalBounds().contains(MousePositionPres))//выход
+                win.close();
+        }
     }
 };
 

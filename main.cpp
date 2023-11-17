@@ -13,6 +13,7 @@
 
 
 void DownTX(std::vector <sf::Texture> &, std::vector <std::string>);
+void DownFont(std::vector <sf::Font> &, std::vector <std::string>);
 
 void CreatePawn(std::vector <Pawn> &, int, sf::Texture &);
 
@@ -41,6 +42,9 @@ int main() {
 
     int NombeFigure = -1;
     int *prt_NombeFigure = &NombeFigure; //идет в функию logic
+
+    int MoverCounter = 1;
+    int *ptr_MoverCounter = &MoverCounter;
 
     bool Press = false;
     bool *ptr_Press = &Press; //идет в функию logic
@@ -97,9 +101,13 @@ int main() {
     std::vector <std::string> FileNamesBishops = {"images/Bishops/WhiteBishop.png", "images/Bishops/BlackBishop.png"};
     DownTX(TxBishop, FileNamesBishops);
 
+    std::vector<sf::Font> Fonts;
+    std::vector<std::string> FileNamesFont = {"Font/Arial/arialmt.ttf"};
+    DownFont(Fonts,FileNamesFont);
+
     //cread button
-    MainMenu mainMenu({}, 3, {}); //|0 - textur| 3 - button| 0 - font|
-    PlayMenu playMenu({}, 3, {}, TxChessBoard);// 
+    MainMenu mainMenu({}, 3, Fonts); //|0 - textur| 3 - button| 0 - font|
+    PlayMenu playMenu({}, 4, Fonts, TxChessBoard);//
 
     mainMenu.getMaxWin(settings.getMaxWinSizeX(),settings.getMaxWinSizeY());
     playMenu.getMaxWin(settings.getMaxWinSizeX(),settings.getMaxWinSizeY());
@@ -146,30 +154,22 @@ int main() {
         //создание кнопок в меню PlayMenu
         if (CreadPlayMenu && (mainMenu.setSizeButtons() == 0)) {
             CreadPlayMenu = false;
-            playMenu.CreatBrtPlayMenu();
+            playMenu.CreatMenuPlay();
         }
   
         win.clear();
         win.draw(settings.getBackground());
 
-        mainMenu.SpawnBrt(win);
-        mainMenu.SpawnText(win);
-
-        playMenu.SpawnBrt(win);
-        playMenu.SpawnText(win);
-        playMenu.SpawnChessBoard(win);
+        mainMenu.WinButton(win);
+        playMenu.WinButton(win);
+        playMenu.WinMenuPlay(win);
 
         for (auto &pawn: Pawns)
             pawn.SpawnPawn(win);
 
-
-
-
         if (PlayLogic) {
-            Logic(prt_NombeFigure, prt_TypeFigure, ptr_Press, ptr_Color, ptr_StrokeLock,Pawns);
-            playMenu.TimeWin(win);
+            Logic(prt_NombeFigure, prt_TypeFigure, ptr_Press, ptr_Color, ptr_StrokeLock,ptr_MoverCounter,Pawns,playMenu);
         }
-
 
         for (auto &pawn: Pawns)
             pawn.SpawnShape(win);
@@ -177,7 +177,6 @@ int main() {
     }
     return 0;
 }
-
 
 
 
@@ -192,12 +191,12 @@ void DownTX(std::vector <sf::Texture> &TxVector, std::vector <std::string> FileN
     }
 }
 
-void DownFont(std::vector <sf::Font> &TxVector, std::vector <std::string> FileNames) {
+void DownFont(std::vector <sf::Font> &Fonts, std::vector <std::string> FileNames) {
     for (const auto &fileName: FileNames) {
         sf::Font font;
         if (font.loadFromFile(fileName)) {
-            TxVector.push_back(font);
-        }
+            Fonts.push_back(font);
+           }
     }
 }
 

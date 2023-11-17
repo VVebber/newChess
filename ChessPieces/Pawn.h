@@ -11,7 +11,7 @@ private:
     float BPowStart = 220.4;
 
     float SizeSquare = 67.7;
-    
+
     int Sh;
 
     std::vector <sf::Texture> TxPawn;
@@ -76,6 +76,24 @@ public:
 
     std::string getTypeFigure_F() {
         return TypeFigure;
+    }
+
+    std::string getCord() {
+        if (TypeFigure == "pawn") {
+            return "p ";
+        } else if (TypeFigure == "rook") {
+            return "R ";
+        } else if (TypeFigure == "knight") {
+            return "N ";
+        } else if (TypeFigure == "bishop") {
+            return "B ";
+        } else if (TypeFigure == "queen") {
+            return "Q ";
+        } else if (TypeFigure == "king") {
+            return "K ";
+        } else {
+            return "0";
+        }
     }
 
     void setPosition_F(std::string newPosition ="") {
@@ -143,13 +161,5 @@ public:
             Shape.setOutlineColor(sf::Color(0, 0, 0, 255));
         }
     }
-
-/*    std::string ChessСoordinates(){
-//x =123 y 626 A1  (конда белыми) H8 черными
-        std::string result;
-        if(Figure[0].get)
-        result = (Color == "white") ? "A1" : "H8";
-        return result;
-    }*/
 };
 #endif //CHESS_PAWN_H
