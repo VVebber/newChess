@@ -2,189 +2,121 @@
 #define CHESS_GAMELOGIC_H
 
 #include "window/PlayMenu.h"
-#include "ChessPieces/Pawn.h"
+#include "Figures.h"
 #include <iostream>
 
-template <typename T1, typename T2>
-void DownloadFigure(std::vector<T1>& , std::vector<T2>& );
+template <typename T1>
+void DownloadFigure(std::vector<T1>& );
 
-template <class T1, class T2>
-void LogicUp(std::vector<T1>&, std::vector<T2>&);
+template <class T1>
+void LogicUp(std::vector<T1>&);
 
-template <class T1, class T2>
-void LogicUpLeft(std::vector<T1>&, std::vector<T2>&);
+template <class T1>
+void LogicUpLeft(std::vector<T1>&);
 
-template <class T1, class T2>
-void LogicUpRight(std::vector<T1>&, std::vector<T2>&);
+template <class T1>
+void LogicUpRight(std::vector<T1>&);
 
-template <class T1, class T2>
-void LogicDownLeft(std::vector<T1>&, std::vector<T2>&);
+template <class T1>
+void LogicDownLeft(std::vector<T1>&);
 
-template <class T1, class T2>
-void LogicDownRight(std::vector<T1>&, std::vector<T2>&);
+template <class T1>
+void LogicDownRight(std::vector<T1>&);
 
-template <class T1, class T2>
-void LogicDown(std::vector<T1>&, std::vector<T2>&);
+template <class T1>
+void LogicDown(std::vector<T1>&);
 
 template <typename T1>
 void FigureGo(PlayMenu&,std::vector<T1>& , int* , std::string*, bool *, std::string *, bool*,int*);
 
-template <class T1, class T2>
-void LogicLeft(std::vector<T1>& ALLFigure, std::vector<T2>& Figure);
+template <class T1>
+void LogicLeft(std::vector<T1>& Figure);
 
-template <class T1, class T2>
-void LogicRight(std::vector<T1>& ALLFigure, std::vector<T2>& Figure);
+template <class T1>
+void LogicRight(std::vector<T1>& Figure);
 
 template <typename T1, typename T2>
 void LogicKing(std::vector<T1>&, std::vector<T2>&, bool*);
 
-template <class T1, class T2>
-void LogicKnights(std::vector<T1>& ALLFigure, std::vector<T2>& Figure);
+template <class T1>
+void LogicKnights(std::vector<T1>& Figure);
     
 template <class T1>
-bool ColorShape(Pawn figure,std::vector<T1>&, sf::CircleShape&);
+bool ColorShape(Figures figure,std::vector<T1>&, sf::CircleShape&);
 void CreadShape(sf::CircleShape&);
 void CreadShapeTest(sf::CircleShape&);
 
 template <class T1, class T2>
 int Killing(std::vector<T1>&,T2, int, int);
 
-struct ALLFigure {
-    std::string Position = "";    //up or down
-    std::string Color = "";       // white or black
-    std::string TypeFigure = "";  //тип фигруры
-
-    std::vector<float> CoordinatesFigure;  // кординаты фигуры. не чет x, чет y
-    std::vector<float> CoordinatesShape;   // кординаты все ходов. не чет x, чет y
-
-    const float SizeSquare = 67.7; //размер поля
-
-    int MasCord[2] = { 0,0 };   // пока не ястно(забыл)
-
-    ALLFigure(std::string p_position = "", std::string p_color = "", std::string p_TypeFigure = "",
-        std::vector<float> p_CoordinatesFigure = {}, std::vector<float> p_CoordinatesShape = {}) {
-        Position = p_position;
-        Color = p_color;
-        TypeFigure = p_TypeFigure;
-
-        for (auto& coordinatesFigure : p_CoordinatesFigure)
-            CoordinatesFigure.push_back(coordinatesFigure);
-
-        for (auto& coordinatesShape : p_CoordinatesShape)
-            CoordinatesShape.push_back(coordinatesShape);
-    }
-};
-
-
 void Logic(int* NombeFigure, std::string* TypeFigure, bool* Press, std::string* Color, bool* StrokeLock,int *MoverCounter,
-    std::vector<Pawn>& Pawns, PlayMenu &playMenu) {
+    std::vector<Figures>& figures, PlayMenu &playMenu) {
 
-    std::vector<ALLFigure> AllFigur;
-    AllFigur.clear();
     //отчистка shape
-    for (auto& pawn : Pawns)
-        pawn.shape.clear();
+    for (auto& figure : figures)
+        figure.Moves.clear();
 
+    LogicUp(figures);
+    LogicUpLeft(figures);
+    LogicUpRight(figures);
 
-    DownloadFigure(Pawns, AllFigur);
-
-    LogicUp(AllFigur, Pawns);
-    LogicUpLeft(AllFigur, Pawns);
-    LogicUpRight(AllFigur, Pawns);
-
-    LogicLeft(AllFigur, Pawns);
-    LogicRight(AllFigur, Pawns);
-
-    LogicDown(AllFigur, Pawns);
-    LogicDownLeft(AllFigur, Pawns);
-    LogicDownRight(AllFigur, Pawns);
-
-    LogicKnights(AllFigur,Pawns);
-    FigureGo(playMenu, Pawns, NombeFigure, TypeFigure, Press, Color, StrokeLock,MoverCounter);
+    LogicLeft(figures);
+    LogicRight(figures);
+    LogicDown(figures);
+    LogicDownLeft(figures);
+    LogicDownRight(figures);
+    LogicKnights(figures);
+    FigureGo(playMenu, figures, NombeFigure, TypeFigure, Press, Color, StrokeLock,MoverCounter);
 }
 
-void CreadShape(sf::CircleShape& shape) {
-    shape.setFillColor(sf::Color(124, 252, 0, 0));
-    shape.setOutlineThickness(2);
-    shape.setOutlineColor(sf::Color(0, 0, 0, 0));
+void CreadShape(sf::CircleShape& Move) {
+    Move.setFillColor(sf::Color(124, 252, 0, 0));
+    Move.setOutlineThickness(2);
+    Move.setOutlineColor(sf::Color(0, 0, 0, 0));
 }
 
-void CreadShapeTest(sf::CircleShape& shape) {
-    shape.setFillColor(sf::Color(124, 252, 0));
-    shape.setOutlineThickness(2);
-    shape.setOutlineColor(sf::Color(0, 0, 0));
+void CreadShapeTest(sf::CircleShape& Move) {
+    Move.setFillColor(sf::Color(124, 252, 0));
+    Move.setOutlineThickness(2);
+    Move.setOutlineColor(sf::Color(0, 0, 0));
 }
 
 template <class T1>
-bool ColorShape(Pawn figure, std::vector<T1>& ALLFigure, sf::CircleShape& shape) {
-    for (int j = 0; j < ALLFigure.size(); j++) {
-        if (int(shape.getPosition().x) == int(ALLFigure[j].CoordinatesFigure[0]) &&
-            int(shape.getPosition().y) == int(ALLFigure[j].CoordinatesFigure[1])) {
-            figure.getPosition_F() == ALLFigure[j].Position ? shape.setFillColor(sf::Color(173, 255, 47, 0)) :
-                shape.setFillColor(sf::Color(255, 0, 0, 0));
+bool ColorShape(Figures figure, std::vector<T1>& figures, sf::CircleShape& Move) {
+    for (int j = 0; j < figures.size(); j++) {
+        if (int(Move.getPosition().x) == int(figures[j].Figure.getPosition().x) &&
+            int(Move.getPosition().y) == int(figures[j].Figure.getPosition().y)) {
+            figure.getPosition_F() == figures[j].getPosition_F() ? Move.setFillColor(sf::Color(173, 255, 47, 0)) :
+                                                                   Move.setFillColor(sf::Color(255, 0, 0, 0));
             return true;
         }
     }
     return false;
 }
 
-template <typename T1, typename T2>
-void DownloadFigure(std::vector<T1>& Figur, std::vector<T2>& AllFigure) {
-    std::string position = "";
-    std::string color = "";
-    std::string TypeFigure = "";
-
-    std::vector<float> CoordinatesFigure;
-    std::vector<float> CoordinatesShape;
-
-    float x1 = 0, y1 = 0;
-    float x2 = 0, y2 = 0;
-    for (auto& figure : Figur) {
-        CoordinatesFigure.clear();
-        CoordinatesShape.clear();
-
-        position = figure.getPosition_F();
-        color = figure.getColor_F();
-        TypeFigure = figure.getTypeFigure_F();
-        x1 = figure.Figure[0].getPosition().x;
-        y1 = figure.Figure[0].getPosition().y;
-        CoordinatesFigure.push_back(x1);
-        CoordinatesFigure.push_back(y1);
-        if (figure.shape.size() != 0)
-            for (auto& Shape : figure.shape) {
-                x2 = Shape.getPosition().x;
-                y2 = Shape.getPosition().y;
-                CoordinatesShape.push_back(x2);
-                CoordinatesShape.push_back(y2);
-            }
-        ALLFigure Al(position, color, TypeFigure, CoordinatesFigure, CoordinatesShape);
-        AllFigure.push_back(Al);
-    }
-}
-
-template <class T1, class T2>
-void LogicUp(std::vector<T1>& ALLFigure, std::vector<T2>& Figure) {
-    for (auto& figure : Figure) {
+template <class T1>
+void LogicUp(std::vector<T1>& figures) {
+    for (auto& figure : figures) {
         bool Continue = false;
         if (figure.getPosition_F() == "up" && figure.getTypeFigure_F() == "pawn" || 
             figure.getTypeFigure_F() =="knights" || figure.getTypeFigure_F() == "bishops")
             continue;
 
         for (int i = 0; i < 8; i++) {
-            sf::CircleShape shape(30, 10);
-            shape.setPosition(figure.Figure[0].getPosition().x,figure.Figure[0].getPosition().y - 67.7 * (i + 1));
+            sf::CircleShape Move(30, 10);
+            Move.setPosition(figure.Figure.getPosition().x,figure.Figure.getPosition().y - 67.7 * (i + 1));
                     
-                if ((figure.getTypeFigure_F() == "pawn" && int(figure.Figure[0].getPosition().y) != 558) && i == 1 ||
+                if ((figure.getTypeFigure_F() == "pawn" && int(figure.Figure.getPosition().y) != 558) && i == 1 ||
                     figure.getTypeFigure_F() == "king" && i == 1)
                     break;
 
-                if (figure.getTypeFigure_F() == "pawn" && int(figure.Figure[0].getPosition().y) == 558 && i == 2)
+                if (figure.getTypeFigure_F() == "pawn" && int(figure.Figure.getPosition().y) == 558 && i == 2)
                     break;
 
-                CreadShape(shape);
-                Continue = ColorShape(figure,ALLFigure, shape);
+                CreadShape(Move);
+                Continue = ColorShape(figure,figures, Move);
 
-                if (shape.getPosition().y < 150) {//150 y
+                if (Move.getPosition().y < 150) {//150 y
                     break;
                 }
 
@@ -193,7 +125,7 @@ void LogicUp(std::vector<T1>& ALLFigure, std::vector<T2>& Figure) {
                     break;
                 }
 
-                figure.shape.push_back(shape);
+                figure.Moves.push_back(Move);
 
                 if (Continue) {
                     Continue = false;
@@ -203,31 +135,31 @@ void LogicUp(std::vector<T1>& ALLFigure, std::vector<T2>& Figure) {
     }
 }
 
-template <class T1, class T2>
-void LogicUpLeft(std::vector<T1>& ALLFigure, std::vector<T2>& Figure) {
-    for (auto& figure : Figure) {
+template <class T1>
+void LogicUpLeft(std::vector<T1>& figures) {
+    for (auto& figure : figures) {
         bool Continue = false;
         if (figure.getTypeFigure_F() == "pawn" || figure.getTypeFigure_F() =="rook" ||
             figure.getTypeFigure_F() == "knights")
             continue;
 
         for (int i = 0; i < 8; i++) {
-            sf::CircleShape shape(30, 10);
-            shape.setPosition(figure.Figure[0].getPosition().x - 67.7 * (i + 1), figure.Figure[0].getPosition().y - 67.7 * (i + 1));
+            sf::CircleShape Move(30, 10);
+            Move.setPosition(figure.Figure.getPosition().x - 67.7 * (i + 1), figure.Figure.getPosition().y - 67.7 * (i + 1));
 
-            if ((figure.getTypeFigure_F() == "pawn" && int(figure.Figure[0].getPosition().y) != 558) && i == 1 ||
+            if ((figure.getTypeFigure_F() == "pawn" && int(figure.Figure.getPosition().y) != 558) && i == 1 ||
                 figure.getTypeFigure_F() == "king" && i == 1)
                 break;
 
-            if (figure.getTypeFigure_F() == "pawn" && int(figure.Figure[0].getPosition().y) == 558 && i == 2)
+            if (figure.getTypeFigure_F() == "pawn" && int(figure.Figure.getPosition().y) == 558 && i == 2)
                 break;
 
 
 
-            CreadShape(shape);
-            Continue = ColorShape(figure, ALLFigure, shape);
+            CreadShape(Move);
+            Continue = ColorShape(figure,figures, Move);
 
-            if (shape.getPosition().y < 150 || shape.getPosition().x < 100) {//150 y
+            if (Move.getPosition().y < 150 || Move.getPosition().x < 100) {//150 y
                 break;
             }
 
@@ -236,7 +168,7 @@ void LogicUpLeft(std::vector<T1>& ALLFigure, std::vector<T2>& Figure) {
                 break;
             }
 
-            figure.shape.push_back(shape);
+            figure.Moves.push_back(Move);
 
             if (Continue) {
                 Continue = false;
@@ -246,31 +178,31 @@ void LogicUpLeft(std::vector<T1>& ALLFigure, std::vector<T2>& Figure) {
     }
 }
 
-template <class T1, class T2>
-void LogicUpRight(std::vector<T1>& ALLFigure, std::vector<T2>& Figure) {
-    for (auto& figure : Figure) {
+template <class T1>
+void LogicUpRight(std::vector<T1>& figures) {
+    for (auto& figure : figures) {
         bool Continue = false;
         if (figure.getTypeFigure_F() == "pawn" || figure.getTypeFigure_F() =="rook" ||
             figure.getTypeFigure_F() == "knights")
             continue;
 
         for (int i = 0; i < 8; i++) {
-            sf::CircleShape shape(30, 10);
-            shape.setPosition(figure.Figure[0].getPosition().x + 67.7 * (i + 1), figure.Figure[0].getPosition().y - 67.7 * (i + 1));
+            sf::CircleShape Move(30, 10);
+            Move.setPosition(figure.Figure.getPosition().x + 67.7 * (i + 1), figure.Figure.getPosition().y - 67.7 * (i + 1));
 
-            if ((figure.getTypeFigure_F() == "pawn" && int(figure.Figure[0].getPosition().y) != 558) && i == 1 ||
+            if ((figure.getTypeFigure_F() == "pawn" && int(figure.Figure.getPosition().y) != 558) && i == 1 ||
                 figure.getTypeFigure_F() == "king" && i == 1)
                 break;
 
-            if (figure.getTypeFigure_F() == "pawn" && int(figure.Figure[0].getPosition().y) == 558 && i == 2)
+            if (figure.getTypeFigure_F() == "pawn" && int(figure.Figure.getPosition().y) == 558 && i == 2)
                 break;
 
 
 
-            CreadShape(shape);
-            Continue = ColorShape(figure, ALLFigure, shape);
+            CreadShape(Move);
+            Continue = ColorShape(figure,figures, Move);
 
-            if (shape.getPosition().y < 150 || shape.getPosition().x > 650) {//150 y
+            if (Move.getPosition().y < 150 || Move.getPosition().x > 650) {//150 y
                 break;
             }
 
@@ -279,7 +211,7 @@ void LogicUpRight(std::vector<T1>& ALLFigure, std::vector<T2>& Figure) {
                 break;
             }
 
-            figure.shape.push_back(shape);
+            figure.Moves.push_back(Move);
 
             if (Continue) {
                 Continue = false;
@@ -289,30 +221,29 @@ void LogicUpRight(std::vector<T1>& ALLFigure, std::vector<T2>& Figure) {
     }
 }
 
-template <class T1, class T2>
-void LogicDown(std::vector<T1>& ALLFigure, std::vector<T2>& Figure) {
-    for (auto& figure : Figure) {
+template <class T1>
+void LogicDown(std::vector<T1>& figures) {
+    for (auto& figure : figures) {
         bool Continue = false;
         if (figure.getPosition_F() == "down" && figure.getTypeFigure_F() == "pawn" ||
             figure.getTypeFigure_F() == "knights" || figure.getTypeFigure_F() == "bishops")
             continue;
 
         for (int i = 0; i < 8; i++) {
-            sf::CircleShape shape(30, 10);
-            shape.setPosition(figure.Figure[0].getPosition().x, figure.Figure[0].getPosition().y + 67.7 * (i + 1));
+            sf::CircleShape Move(30, 10);
+            Move.setPosition(figure.Figure.getPosition().x, figure.Figure.getPosition().y + 67.7 * (i + 1));
 
-            if ((figure.getTypeFigure_F() == "pawn" && int(figure.Figure[0].getPosition().y) != 220) && i == 1 ||
+            if ((figure.getTypeFigure_F() == "pawn" && int(figure.Figure.getPosition().y) != 220) && i == 1 ||
                 figure.getTypeFigure_F() == "king" && i == 1)
                 break;
 
-            if (figure.getTypeFigure_F() == "pawn" && int(figure.Figure[0].getPosition().y) == 220 && i == 2)
+            if (figure.getTypeFigure_F() == "pawn" && int(figure.Figure.getPosition().y) == 220 && i == 2)
                 break;
 
-            CreadShape(shape);
-            Continue = ColorShape(figure, ALLFigure, shape);
+            CreadShape(Move);
+            Continue = ColorShape(figure,figures, Move);
 
-
-            if (shape.getPosition().y > 650) {
+            if (Move.getPosition().y > 650) {
                 break;
             }
 
@@ -321,7 +252,7 @@ void LogicDown(std::vector<T1>& ALLFigure, std::vector<T2>& Figure) {
                 break;
             }
 
-            figure.shape.push_back(shape);
+            figure.Moves.push_back(Move);
 
             if (Continue) {
                 Continue = false;
@@ -331,31 +262,29 @@ void LogicDown(std::vector<T1>& ALLFigure, std::vector<T2>& Figure) {
     }
 }
 
-template <class T1, class T2>
-void LogicDownLeft(std::vector<T1>& ALLFigure, std::vector<T2>& Figure) {
-    for (auto& figure : Figure) {
+template <class T1>
+void LogicDownLeft(std::vector<T1>& figures) {
+    for (auto& figure : figures) {
         bool Continue = false;
         if (figure.getTypeFigure_F() == "pawn" || figure.getTypeFigure_F() == "rook" ||
         figure.getTypeFigure_F() == "knights")
             continue;
 
         for (int i = 0; i < 8; i++) {
-            sf::CircleShape shape(30, 10);
-            shape.setPosition(figure.Figure[0].getPosition().x - 67.7 * (i + 1), figure.Figure[0].getPosition().y + 67.7 * (i + 1));
+            sf::CircleShape Move(30, 10);
+            Move.setPosition(figure.Figure.getPosition().x - 67.7 * (i + 1), figure.Figure.getPosition().y + 67.7 * (i + 1));
 
-            if ((figure.getTypeFigure_F() == "pawn" && int(figure.Figure[0].getPosition().y) != 558) && i == 1 ||
+            if ((figure.getTypeFigure_F() == "pawn" && int(figure.Figure.getPosition().y) != 558) && i == 1 ||
                 figure.getTypeFigure_F() == "king" && i == 1)
                 break;
 
-            if (figure.getTypeFigure_F() == "pawn" && int(figure.Figure[0].getPosition().y) == 558 && i == 2)
+            if (figure.getTypeFigure_F() == "pawn" && int(figure.Figure.getPosition().y) == 558 && i == 2)
                 break;
 
+            CreadShape(Move);
+            Continue = ColorShape(figure,figures, Move);
 
-
-            CreadShape(shape);
-            Continue = ColorShape(figure, ALLFigure, shape);
-            
-            if (shape.getPosition().y > 650 || shape.getPosition().x < 100){//150 y
+            if (Move.getPosition().y > 650 || Move.getPosition().x < 100){//150 y
                 break;
             }
 
@@ -364,7 +293,7 @@ void LogicDownLeft(std::vector<T1>& ALLFigure, std::vector<T2>& Figure) {
                 break;
             }
 
-            figure.shape.push_back(shape);
+            figure.Moves.push_back(Move);
 
             if (Continue) {
                 Continue = false;
@@ -374,31 +303,31 @@ void LogicDownLeft(std::vector<T1>& ALLFigure, std::vector<T2>& Figure) {
     }
 }
 
-template <class T1, class T2>
-void LogicDownRight(std::vector<T1>& ALLFigure, std::vector<T2>& Figure) {
-    for (auto& figure : Figure) {
+template <class T1>
+void LogicDownRight(std::vector<T1>& figures) {
+    for (auto& figure : figures) {
         bool Continue = false;
         if (figure.getTypeFigure_F() == "pawn" || figure.getTypeFigure_F() == "rook" ||
             figure.getTypeFigure_F() == "knights")
             continue;
 
         for (int i = 0; i < 8; i++) {
-            sf::CircleShape shape(30, 10);
-            shape.setPosition(figure.Figure[0].getPosition().x + 67.7 * (i + 1), figure.Figure[0].getPosition().y + 67.7 * (i + 1));
+            sf::CircleShape Move(30, 10);
+            Move.setPosition(figure.Figure.getPosition().x + 67.7 * (i + 1), figure.Figure.getPosition().y + 67.7 * (i + 1));
 
-            if ((figure.getTypeFigure_F() == "pawn" && int(figure.Figure[0].getPosition().y) != 558) && i == 1 ||
+            if ((figure.getTypeFigure_F() == "pawn" && int(figure.Figure.getPosition().y) != 558) && i == 1 ||
                 figure.getTypeFigure_F() == "king" && i == 1)
                 break;
 
-            if (figure.getTypeFigure_F() == "pawn" && int(figure.Figure[0].getPosition().y) == 558 && i == 2)
+            if (figure.getTypeFigure_F() == "pawn" && int(figure.Figure.getPosition().y) == 558 && i == 2)
                 break;
 
 
 
-            CreadShape(shape);
-            Continue = ColorShape(figure, ALLFigure, shape);
+            CreadShape(Move);
+            Continue = ColorShape(figure,figures, Move);
 
-            if (shape.getPosition().y > 650 || shape.getPosition().x > 650) {//150 y
+            if (Move.getPosition().y > 650 || Move.getPosition().x > 650) {//150 y
                 break;
             }
 
@@ -407,7 +336,7 @@ void LogicDownRight(std::vector<T1>& ALLFigure, std::vector<T2>& Figure) {
                 break;
             }
 
-            figure.shape.push_back(shape);
+            figure.Moves.push_back(Move);
 
             if (Continue) {
                 Continue = false;
@@ -417,29 +346,29 @@ void LogicDownRight(std::vector<T1>& ALLFigure, std::vector<T2>& Figure) {
     }
 }
 
-template <class T1, class T2>
-void LogicLeft(std::vector<T1>& ALLFigure, std::vector<T2>& Figure) {
-    for (auto& figure : Figure) {
+template <class T1>
+void LogicLeft(std::vector<T1>& figures) {
+    for (auto& figure : figures) {
         bool Continue = false;
         if (figure.getTypeFigure_F() == "bishops" || figure.getTypeFigure_F() == "pawn" ||
             figure.getTypeFigure_F() == "knights")
             continue;
 
         for (int i = 0; i < 8; i++) {
-            sf::CircleShape shape(30, 10);
-            shape.setPosition(figure.Figure[0].getPosition().x - 67.7 * (i + 1), figure.Figure[0].getPosition().y);
+            sf::CircleShape Move(30, 10);
+            Move.setPosition(figure.Figure.getPosition().x - 67.7 * (i + 1), figure.Figure.getPosition().y);
 
-            if ((figure.getTypeFigure_F() == "pawn" && int(figure.Figure[0].getPosition().y) != 220) && i == 1 ||
+            if ((figure.getTypeFigure_F() == "pawn" && int(figure.Figure.getPosition().y) != 220) && i == 1 ||
                 figure.getTypeFigure_F() == "king" && i == 1)
                 break;
 
-            if (figure.getTypeFigure_F() == "pawn" && int(figure.Figure[0].getPosition().y) == 220 && i == 2)
+            if (figure.getTypeFigure_F() == "pawn" && int(figure.Figure.getPosition().y) == 220 && i == 2)
                 break;
 
-            CreadShape(shape);
-            Continue = ColorShape(figure, ALLFigure, shape);
+            CreadShape(Move);
+            Continue = ColorShape(figure,figures, Move);
 
-            if (shape.getPosition().x < 100) {//150 y
+            if (Move.getPosition().x < 100) {//150 y
                 break;
             }
 
@@ -448,7 +377,7 @@ void LogicLeft(std::vector<T1>& ALLFigure, std::vector<T2>& Figure) {
                 break;
             }
 
-            figure.shape.push_back(shape);
+            figure.Moves.push_back(Move);
 
             if (Continue) {
                 Continue = false;
@@ -458,29 +387,29 @@ void LogicLeft(std::vector<T1>& ALLFigure, std::vector<T2>& Figure) {
     }
 }
 
-template <class T1, class T2>
-void LogicRight(std::vector<T1>& ALLFigure, std::vector<T2>& Figure) {
-    for (auto& figure : Figure) {
+template <class T1>
+void LogicRight(std::vector<T1>& figures) {
+    for (auto& figure : figures) {
         bool Continue = false;
         if (figure.getTypeFigure_F() == "bishops" || figure.getTypeFigure_F() == "pawn" ||
             figure.getTypeFigure_F() == "knights")
             continue;
 
         for (int i = 0; i < 8; i++) {
-            sf::CircleShape shape(30, 10);
-            shape.setPosition(figure.Figure[0].getPosition().x + 67.7 * (i + 1), figure.Figure[0].getPosition().y);
+            sf::CircleShape Move(30, 10);
+            Move.setPosition(figure.Figure.getPosition().x + 67.7 * (i + 1), figure.Figure.getPosition().y);
 
-            if ((figure.getTypeFigure_F() == "pawn" && int(figure.Figure[0].getPosition().y) != 220) && i == 1 ||
+            if ((figure.getTypeFigure_F() == "pawn" && int(figure.Figure.getPosition().y) != 220) && i == 1 ||
                 figure.getTypeFigure_F() == "king" && i == 1)
                 break;
 
-            if (figure.getTypeFigure_F() == "pawn" && int(figure.Figure[0].getPosition().y) == 220 && i == 2)
+            if (figure.getTypeFigure_F() == "pawn" && int(figure.Figure.getPosition().y) == 220 && i == 2)
                 break;
 
-            CreadShape(shape);
-            Continue = ColorShape(figure, ALLFigure, shape);
+            CreadShape(Move);
+            Continue = ColorShape(figure,figures, Move);
 
-            if (shape.getPosition().x > 650) {//150 y
+            if (Move.getPosition().x > 650) {//150 y
                 break;
             }
 
@@ -489,7 +418,7 @@ void LogicRight(std::vector<T1>& ALLFigure, std::vector<T2>& Figure) {
                 break;
             }
 
-            figure.shape.push_back(shape);
+            figure.Moves.push_back(Move);
 
             if (Continue) {
                 Continue = false;
@@ -510,17 +439,17 @@ void LogicKnights(std::vector<T1>& ALLFigure, std::vector<T2>& Figure) {
                 sf::CircleShape shape(30, 10);
                 switch (i)
                 {
-                case 0: shape.setPosition(figure.Figure[0].getPosition().x + 67.7 * 2, figure.Figure[0].getPosition().y + 67.7); break;
-                case 1: shape.setPosition(figure.Figure[0].getPosition().x + 67.7 * 2, figure.Figure[0].getPosition().y - 67.7); break;
-                case 2: shape.setPosition(figure.Figure[0].getPosition().x - 67.7 * 2, figure.Figure[0].getPosition().y + 67.7); break;
-                case 3: shape.setPosition(figure.Figure[0].getPosition().x - 67.7 * 2, figure.Figure[0].getPosition().y - 67.7); break;
-                case 4: shape.setPosition(figure.Figure[0].getPosition().x + 67.7, figure.Figure[0].getPosition().y + 67.7 * 2); break;
-                case 5: shape.setPosition(figure.Figure[0].getPosition().x + 67.7, figure.Figure[0].getPosition().y - 67.7 * 2); break;
-                case 6: shape.setPosition(figure.Figure[0].getPosition().x - 67.7, figure.Figure[0].getPosition().y + 67.7 * 2); break;
-                case 7: shape.setPosition(figure.Figure[0].getPosition().x - 67.7, figure.Figure[0].getPosition().y - 67.7 * 2); break;
+                case 0: shape.setPosition(figure.Figure.getPosition().x + 67.7 * 2, figure.Figure.getPosition().y + 67.7); break;
+                case 1: shape.setPosition(figure.Figurz.getPosition().x + 67.7 * 2, figure.Figure.getPosition().y - 67.7); break;
+                case 2: shape.setPosition(figure.Figure.getPosition().x - 67.7 * 2, figure.Figure.getPosition().y + 67.7); break;
+                case 3: shape.setPosition(figure.Figure.getPosition().x - 67.7 * 2, figure.Figure.getPosition().y - 67.7); break;
+                case 4: shape.setPosition(figure.Figure.getPosition().x + 67.7, figure.Figure.getPosition().y + 67.7 * 2); break;
+                case 5: shape.setPosition(figure.Figure.getPosition().x + 67.7, figure.Figure.getPosition().y - 67.7 * 2); break;
+                case 6: shape.setPosition(figure.Figure.getPosition().x - 67.7, figure.Figure.getPosition().y + 67.7 * 2); break;
+                case 7: shape.setPosition(figure.Figure.getPosition().x - 67.7, figure.Figure.getPosition().y - 67.7 * 2); break;
                 }
                 CreadShape(shape);
-                Continue = ColorShape(figure, ALLFigure, shape);
+                Continue = ColorShape(figure,Figure, shape);
 
                 if (shape.getPosition().y > 650 || shape.getPosition().x > 665 ||
                     shape.getPosition().y < 150 || shape.getPosition().x < 150) {
@@ -544,12 +473,12 @@ void FigureGo(PlayMenu &playMenu,std::vector<T1>& figure, int* sh, std::string* 
         if (*Color == figure[i].getColor_F())
             continue;
 
-        if (figure[i].Figure[0].getGlobalBounds().contains(figure[i].getMousePositionPres())) {
+        if (figure[i].Figure.getGlobalBounds().contains(figure[i].getMousePositionPres())) {
             *sh = i;
             *TypeFigure = figure[i].getTypeFigure_F();
             playMenu.getChessCordStart(playMenu.Cord(figure[*sh]));
             std::cout<<figure[*sh].getColor_F()<<" | "<<figure[*sh].getPosition_F()<<"\n";
-            std::cout<<"x="<<figure[*sh].Figure[0].getPosition().x<<"y="<<figure[*sh].Figure[0].getPosition().y<<"\n";
+            std::cout<<"x="<<figure[*sh].Figure.getPosition().x<<"y="<<figure[*sh].Figure.getPosition().y<<"\n";
             *Press = true;
             break;
         }
@@ -557,9 +486,9 @@ void FigureGo(PlayMenu &playMenu,std::vector<T1>& figure, int* sh, std::string* 
     if (*Press)
         if (*TypeFigure == figure[*sh].getTypeFigure_F()) {
             figure[*sh].CreadNewColor();
-            for (int i = 0; i < figure[*sh].shape.size(); i++)
-                if (figure[*sh].shape[i].getGlobalBounds().contains(figure[*sh].getMousePositionPres())) {
-                    figure[*sh].Figure[0].setPosition(figure[*sh].shape[i].getPosition().x,figure[*sh].shape[i].getPosition().y);
+            for (int i = 0; i < figure[*sh].Moves.size(); i++)
+                if (figure[*sh].Moves[i].getGlobalBounds().contains(figure[*sh].getMousePositionPres())) {
+                    figure[*sh].Figure.setPosition(figure[*sh].Moves[i].getPosition().x,figure[*sh].Moves[i].getPosition().y);
                     playMenu.getChessCordEnd(S + playMenu.Cord(figure[*sh]));
                     *Press = false;
                     *StrokeLock = true;
@@ -581,8 +510,8 @@ int  Killing(std::vector<T1>& Figure,T2 figure, int chShape, int chFigure) {
     for (int i = 0; i < Figure.size(); i++) {
         if(i == chFigure)
             continue;
-        if (int(figure.shape[chShape].getPosition().x) == int(Figure[i].Figure[0].getPosition().x) &&
-            int(figure.shape[chShape].getPosition().y) == int(Figure[i].Figure[0].getPosition().y))
+        if (int(figure.Moves[chShape].getPosition().x) == int(Figure[i].Figure.getPosition().x) &&
+            int(figure.Moves[chShape].getPosition().y) == int(Figure[i].Figure.getPosition().y))
             return i;
     }
     return -1;
@@ -594,8 +523,8 @@ void LogicKing(std::vector<T1>& Figur, std::vector<T2>& AllFigure, bool* StrokeL
         for (int i = 0; i < AllFigure.size(); i++) {
             if (king.color != AllFigure[i].Color)
                 for (int j = 0; j < AllFigure[i].CoordinatesShape.size(); j += 2)
-                    if (int(king.Figure[0].getPosition().x) == int(AllFigure[i].CoordinatesShape[j]) &&
-                        int(king.Figure[0].getPosition().y) == int(AllFigure[i].CoordinatesShape[j + 1]))
+                    if (int(king.Figure.getPosition().x) == int(AllFigure[i].CoordinatesShape[j]) &&
+                        int(king.Figure.getPosition().y) == int(AllFigure[i].CoordinatesShape[j + 1]))
                         *StrokeLock = false;
         }
 }

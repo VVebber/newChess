@@ -5,7 +5,7 @@
 #include <vector>
 #include "MainMenu.h"
 
-#include "../ChessPieces/Pawn.h"
+#include "../Figures.h"
 
 class PlayMenu : public MainMenu {
 private:
@@ -198,14 +198,14 @@ public:
 
     }
 
-    void PressedPlayMenu(bool *ptr_PlayLogic, std::vector<Pawn> &Pawns) {
+    void PressedPlayMenu(bool *ptr_PlayLogic, std::vector<Figures> &figures) {
         bool Temporary = false;
         if (Buttons.size() != 0) {
             if (Buttons[0].getGlobalBounds().contains(MousePositionPres)) {
                 CreatChessBoard(1);
                 CreatPlay();
                 *ptr_PlayLogic = true;
-                for (auto &figure: Pawns) {
+                for (auto &figure: figures) {
                     if (figure.getPosition_F() == "down")
                         figure.setColor("white");
                     if (figure.getPosition_F() == "up")
@@ -217,7 +217,7 @@ public:
                 CreatChessBoard(0);
                 CreatPlay();
                 *ptr_PlayLogic = true;
-                for (auto &figure: Pawns) {
+                for (auto &figure: figures) {
                     if (figure.getPosition_F() == "down")
                         figure.setColor("black");
                     if (figure.getPosition_F() == "up")
@@ -232,7 +232,7 @@ public:
                 Texts[3].setString(L"error");
             }
             if (Temporary)
-                for (auto &figure: Pawns) {
+                for (auto &figure: figures) {
                     figure.CredPawn();
                 }
         }
@@ -278,39 +278,39 @@ public:
     std::string Cord(T1 &figure) {
         std::string cord ="";
 
-        if (int(figure.Figure[0].getPosition().x) == 123) {
+        if (int(figure.Figure.getPosition().x) == 123) {
             cord = figure.getCord() + (figure.getColor_F() == "white" && figure.getPosition_F() == "down" ||  figure.getColor_F() == "black" && figure.getPosition_F() == "up"? "A" : "H");
-        } else if (int(figure.Figure[0].getPosition().x) == 191) {
+        } else if (int(figure.Figure.getPosition().x) == 191) {
             cord =  figure.getCord() + (figure.getColor_F() == "white" && figure.getPosition_F() == "down" ||  figure.getColor_F() == "black" && figure.getPosition_F() == "up"? "B" : "G");
-        } else if (int(figure.Figure[0].getPosition().x) == 259) {
+        } else if (int(figure.Figure.getPosition().x) == 259) {
             cord =  figure.getCord() + (figure.getColor_F() == "white" && figure.getPosition_F() == "down" ||  figure.getColor_F() == "black" && figure.getPosition_F() == "up"? "C" : "F");
-        } else if (int(figure.Figure[0].getPosition().x) == 326) {
+        } else if (int(figure.Figure.getPosition().x) == 326) {
             cord =  figure.getCord() + (figure.getColor_F() == "white" && figure.getPosition_F() == "down" ||  figure.getColor_F() == "black" && figure.getPosition_F() == "up"? "D" : "E");
-        } else if (int(figure.Figure[0].getPosition().x) == 394) {
+        } else if (int(figure.Figure.getPosition().x) == 394) {
             cord =  figure.getCord() + (figure.getColor_F() == "white" && figure.getPosition_F() == "down" ||  figure.getColor_F() == "black" && figure.getPosition_F() == "up"? "E" : "D");
-        } else if (int(figure.Figure[0].getPosition().x) == 462) {
+        } else if (int(figure.Figure.getPosition().x) == 462) {
             cord =  figure.getCord() + (figure.getColor_F() == "white" && figure.getPosition_F() == "down" ||  figure.getColor_F() == "black" && figure.getPosition_F() == "up"? "F" : "C");
-        } else if (int(figure.Figure[0].getPosition().x) == 529) {
+        } else if (int(figure.Figure.getPosition().x) == 529) {
             cord =  figure.getCord() + (figure.getColor_F() == "white" && figure.getPosition_F() == "down" ||  figure.getColor_F() == "black" && figure.getPosition_F() == "up"? "G" : "B");
-        } else if (int(figure.Figure[0].getPosition().x) == 597) {
+        } else if (int(figure.Figure.getPosition().x) == 597) {
             cord =  figure.getCord() + (figure.getColor_F() == "white" && figure.getPosition_F() == "down" ||  figure.getColor_F() == "black" && figure.getPosition_F() == "up"? "H" : "A");
         }
 
-        if (int(figure.Figure[0].getPosition().y) == 626) {
+        if (int(figure.Figure.getPosition().y) == 626) {
             cord = figure.getCord() + (figure.getColor_F() == "white" && figure.getPosition_F() == "down" ||  figure.getColor_F() == "black" && figure.getPosition_F() == "up"? "1" : "8");
-        } else if (int(figure.Figure[0].getPosition().y) == 558) {
+        } else if (int(figure.Figure.getPosition().y) == 558) {
             cord = cord + (figure.getColor_F() == "white" && figure.getPosition_F() == "down" ||  figure.getColor_F() == "black" && figure.getPosition_F() == "up"? "2" : "7");
-        } else if (int(figure.Figure[0].getPosition().y) == 491) {
+        } else if (int(figure.Figure.getPosition().y) == 491) {
             cord = cord + (figure.getColor_F() == "white" && figure.getPosition_F() == "down" ||  figure.getColor_F() == "black" && figure.getPosition_F() == "up"? "3" : "6");
-        } else if (int(figure.Figure[0].getPosition().y) == 423) {
+        } else if (int(figure.Figure.getPosition().y) == 423) {
             cord = cord +  (figure.getColor_F() == "white" && figure.getPosition_F() == "down" ||  figure.getColor_F() == "black" && figure.getPosition_F() == "up"? "4" : "5");
-        } else if (int(figure.Figure[0].getPosition().y) == 355) {
+        } else if (int(figure.Figure.getPosition().y) == 355) {
             cord = cord + (figure.getColor_F() == "white" && figure.getPosition_F() == "down" ||  figure.getColor_F() == "black" && figure.getPosition_F() == "up"? "5" : "4");
-        } else if (int(figure.Figure[0].getPosition().y) == 288) {
+        } else if (int(figure.Figure.getPosition().y) == 288) {
             cord = cord + (figure.getColor_F() == "white" && figure.getPosition_F() == "down" ||  figure.getColor_F() == "black" && figure.getPosition_F() == "up"? "6" : "3");
-        } else if (int(figure.Figure[0].getPosition().y) == 220) {
+        } else if (int(figure.Figure.getPosition().y) == 220) {
             cord = cord + (figure.getColor_F() == "white" && figure.getPosition_F() == "down" ||  figure.getColor_F() == "black" && figure.getPosition_F() == "up"? "7" : "2");
-        } else if (int(figure.Figure[0].getPosition().y) == 152) {
+        } else if (int(figure.Figure.getPosition().y) == 152) {
             cord = cord + (figure.getColor_F() == "white" && figure.getPosition_F() == "down" ||  figure.getColor_F() == "black" && figure.getPosition_F() == "up"? "8" : "1");
         }
         return cord;

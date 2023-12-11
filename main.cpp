@@ -7,17 +7,14 @@
 #include "window/Settings.h"
 
 //Fige
-#include "ChessPieces/Pawn.h"
 
 #include "GameLogic.h"
+#include "Figures.h"
 
 
 void DownTX(std::vector <sf::Texture> &, std::vector <std::string>);
 void DownFont(std::vector <sf::Font> &, std::vector <std::string>);
-
-void CreatePawn(std::vector <Pawn> &, int, sf::Texture &);
-
-void F_CreatOject(std::vector<Pawn>&,  std::vector <sf::Texture>&,std::string, int, int);
+void F_CreatOject(std::vector<Figures>&,  std::vector <sf::Texture>&,std::string, int, int);
 
 int main() {
     Senttings settings;
@@ -115,13 +112,13 @@ int main() {
     mainMenu.CreatBrtMainMenu();
 
     //cread Figure
-    std::vector <Pawn> Pawns;
-    F_CreatOject(Pawns,TxPawn,"pawn",Quant_Players,Quant_Pawn);
-    F_CreatOject(Pawns,TxQueen,"queen",Quant_Players,Quant_Queen);
-    F_CreatOject(Pawns,TxKing,"king",Quant_Players,Quant_King);
-    F_CreatOject(Pawns,TxRook,"rook",Quant_Players,Quant_Rook);
-    F_CreatOject(Pawns,TxKnight,"knights",Quant_Players,Quant_Knight);
-    F_CreatOject(Pawns,TxBishop,"bishops",Quant_Players,Quant_Bishop);
+    std::vector <Figures> figures;
+    F_CreatOject(figures,TxPawn,"pawn",Quant_Players,Quant_Pawn);
+    F_CreatOject(figures,TxQueen,"queen",Quant_Players,Quant_Queen);
+    F_CreatOject(figures,TxKing,"king",Quant_Players,Quant_King);
+    F_CreatOject(figures,TxRook,"rook",Quant_Players,Quant_Rook);
+    F_CreatOject(figures,TxKnight,"knights",Quant_Players,Quant_Knight);
+    F_CreatOject(figures,TxBishop,"bishops",Quant_Players,Quant_Bishop);
 
 
     while (win.isOpen()) {
@@ -144,11 +141,11 @@ int main() {
                     mainMenu.getMousePositionPres(mousePosition);
                     playMenu.getMousePositionPres(mousePosition);
 
-                    for (auto &pawn: Pawns)
-                        pawn.F_mousePositionPres(mousePosition);
+                    for (auto &figure: figures)
+                        figure.F_mousePositionPres(mousePosition);
                     //нажатия
                     mainMenu.PressedMainMenu(win, ptr_CreadPlayMenu);
-                    playMenu.PressedPlayMenu(ptr_PlayLogic, Pawns);
+                    playMenu.PressedPlayMenu(ptr_PlayLogic, figures);
                 }
         }
         //создание кнопок в меню PlayMenu
@@ -164,15 +161,13 @@ int main() {
         playMenu.WinButton(win);
         playMenu.WinMenuPlay(win);
 
-        for (auto &pawn: Pawns)
-            pawn.SpawnPawn(win);
-
         if (PlayLogic) {
-            Logic(prt_NombeFigure, prt_TypeFigure, ptr_Press, ptr_Color, ptr_StrokeLock,ptr_MoverCounter,Pawns,playMenu);
+            Logic(prt_NombeFigure, prt_TypeFigure, ptr_Press, ptr_Color, ptr_StrokeLock,ptr_MoverCounter,figures,playMenu);
         }
 
-        for (auto &pawn: Pawns)
-            pawn.SpawnShape(win);
+        for (auto &figure: figures)
+            figure.AllWin(win);
+
         win.display();
     }
     return 0;
@@ -200,19 +195,19 @@ void DownFont(std::vector <sf::Font> &Fonts, std::vector <std::string> FileNames
     }
 }
 
-void F_CreatOject(std::vector<Pawn> &Pawns,  std::vector <sf::Texture> &TxFigure,
+void F_CreatOject(std::vector<Figures> &figures,  std::vector <sf::Texture> &TxFigure,
                   std::string TypeFigure, int Quant_Players, int Quant_Figur){
     for (int i = 0, i_Fi = 0, i_; i < Quant_Figur * Quant_Players; i++) {
-        Pawn pawn{0,"","",{}};
+        Figures figure{0,"","",{}};
         if (i_Fi < Quant_Figur * 1 && Quant_Players <= 2) {
             std::string posit = "up";
-            pawn.init(i, posit, TypeFigure, TxFigure);
+            figure.init(i, posit, TypeFigure, TxFigure);
             i_Fi++;
         } else if (i_Fi < Quant_Figur * 2 && Quant_Players <= 2) {
             std::string posit = "down";
-            pawn.init(i, posit, TypeFigure, TxFigure);
+            figure.init(i, posit, TypeFigure, TxFigure);
             i_Fi++;
         }
-        Pawns.push_back(pawn);
+        figures.push_back(figure);
     }
 }

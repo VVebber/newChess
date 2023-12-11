@@ -1,1 +1,4 @@
-CMakeLists.txt not found in /Users/danilmalyshev/Desktop/MyProgect/chess Select CMakeLists.txt
+Cannot generate into /Users/danilmalyshev/Desktop/MyProgect/The_Quiz2
+It is already used for project /Users/danilmalyshev/Desktop/MyProgect/newChess
+
+Please either delete it manually or select another generation directory

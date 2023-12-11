@@ -1,16 +1,19 @@
 cmake_minimum_required(VERSION 3.26)
-project(chess)
+project(newChess)
 
 set(CMAKE_CXX_STANDARD 17)
+
+include_directories(/opt/homebrew/Cellar/sfml/2.6.0/include)
+
+link_directories(/opt/homebrew/Cellar/sfml/2.6.0/lib)
+
 find_package(SFML 2.5 COMPONENTS graphics audio REQUIRED)
 
 
-add_executable(chess main.cpp
+add_executable(newChess main.cpp
         window/MainMenu.h
         window/MainMenu.h
         window/PlayMenu.h
-        ChessPieces/Pawn.h
-        GameLogic.h
-)
+        GameLogic.h )
 
-target_link_libraries(chess sfml-graphics sfml-audio)
+target_link_libraries(newChess sfml-graphics sfml-audio)

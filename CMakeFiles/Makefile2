@@ -63,7 +63,7 @@ CMAKE_BINARY_DIR = /Users/danilmalyshev/Desktop/MyProgect/newChess
 # Directory level rules for the build root directory
 
 # The main recursive "all" target.
-all: CMakeFiles/chess.dir/all
+all: CMakeFiles/newChess.dir/all
 .PHONY : all
 
 # The main recursive "preinstall" target.
@@ -71,34 +71,34 @@ preinstall:
 .PHONY : preinstall
 
 # The main recursive "clean" target.
-clean: CMakeFiles/chess.dir/clean
+clean: CMakeFiles/newChess.dir/clean
 .PHONY : clean
 
 #=============================================================================
-# Target rules for target CMakeFiles/chess.dir
+# Target rules for target CMakeFiles/newChess.dir
 
 # All Build rule for target.
-CMakeFiles/chess.dir/all:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/chess.dir/build.make CMakeFiles/chess.dir/depend
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/chess.dir/build.make CMakeFiles/chess.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/danilmalyshev/Desktop/MyProgect/newChess/CMakeFiles --progress-num=1,2 "Built target chess"
-.PHONY : CMakeFiles/chess.dir/all
+CMakeFiles/newChess.dir/all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/newChess.dir/build.make CMakeFiles/newChess.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/newChess.dir/build.make CMakeFiles/newChess.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/danilmalyshev/Desktop/MyProgect/newChess/CMakeFiles --progress-num=1,2 "Built target newChess"
+.PHONY : CMakeFiles/newChess.dir/all
 
 # Build rule for subdir invocation for target.
-CMakeFiles/chess.dir/rule: cmake_check_build_system
+CMakeFiles/newChess.dir/rule: cmake_check_build_system
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/danilmalyshev/Desktop/MyProgect/newChess/CMakeFiles 2
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/chess.dir/all
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/newChess.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/danilmalyshev/Desktop/MyProgect/newChess/CMakeFiles 0
-.PHONY : CMakeFiles/chess.dir/rule
+.PHONY : CMakeFiles/newChess.dir/rule
 
 # Convenience name for target.
-chess: CMakeFiles/chess.dir/rule
-.PHONY : chess
+newChess: CMakeFiles/newChess.dir/rule
+.PHONY : newChess
 
 # clean rule for target.
-CMakeFiles/chess.dir/clean:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/chess.dir/build.make CMakeFiles/chess.dir/clean
-.PHONY : CMakeFiles/chess.dir/clean
+CMakeFiles/newChess.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/newChess.dir/build.make CMakeFiles/newChess.dir/clean
+.PHONY : CMakeFiles/newChess.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.

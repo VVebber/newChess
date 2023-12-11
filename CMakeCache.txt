@@ -146,7 +146,7 @@ CMAKE_PROJECT_DESCRIPTION:STATIC=
 CMAKE_PROJECT_HOMEPAGE_URL:STATIC=
 
 //Value Computed by CMake
-CMAKE_PROJECT_NAME:STATIC=chess
+CMAKE_PROJECT_NAME:STATIC=newChess
 
 //Path to a program.
 CMAKE_RANLIB:FILEPATH=/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ranlib
@@ -227,6 +227,15 @@ chess_IS_TOP_LEVEL:STATIC=ON
 
 //Value Computed by CMake
 chess_SOURCE_DIR:STATIC=/Users/danilmalyshev/Desktop/MyProgect/newChess
+
+//Value Computed by CMake
+newChess_BINARY_DIR:STATIC=/Users/danilmalyshev/Desktop/MyProgect/newChess
+
+//Value Computed by CMake
+newChess_IS_TOP_LEVEL:STATIC=ON
+
+//Value Computed by CMake
+newChess_SOURCE_DIR:STATIC=/Users/danilmalyshev/Desktop/MyProgect/newChess
 
 
 ########################

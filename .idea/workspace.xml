@@ -20,30 +20,98 @@
   <component name="ChangeListManager">
     <list default="true" id="3a604557-d30c-489d-8416-8affa4a3efff" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeCache.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeCache.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeFiles/3.27.3/CMakeDetermineCompilerABI_C.bin" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeFiles/3.27.3/CMakeDetermineCompilerABI_C.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeFiles/3.27.3/CMakeDetermineCompilerABI_CXX.bin" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeFiles/3.27.3/CMakeDetermineCompilerABI_CXX.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeFiles/CMakeConfigureLog.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeFiles/CMakeConfigureLog.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeFiles/CMakeDirectoryInformation.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeFiles/CMakeDirectoryInformation.cmake" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeFiles/Makefile.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeFiles/Makefile.cmake" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeFiles/Makefile2" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeFiles/Makefile2" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeFiles/TargetDirectories.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeFiles/TargetDirectories.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeFiles/chess.dir/DependInfo.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeFiles/chess.dir/DependInfo.cmake" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeFiles/chess.dir/build.make" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeFiles/chess.dir/build.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeFiles/chess.dir/compiler_depend.internal" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeFiles/chess.dir/compiler_depend.internal" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeFiles/chess.dir/compiler_depend.make" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeFiles/chess.dir/compiler_depend.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeFiles/chess.dir/main.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeFiles/chess.dir/main.cpp.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeFiles/chess.dir/main.cpp.o.d" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeFiles/chess.dir/main.cpp.o.d" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ChessPieces/Pawn.h" beforeDir="false" afterPath="$PROJECT_DIR$/ChessPieces/Pawn.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GameLogic.h" beforeDir="false" afterPath="$PROJECT_DIR$/GameLogic.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/Makefile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/chess" beforeDir="false" afterPath="$PROJECT_DIR$/chess" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake_install.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake_install.cmake" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/Battle-Chess-Pieces-PNG-File — копия 3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/Battle-Chess-Pieces-PNG-File — копия 4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/Battle-Chess-Pieces-PNG-File — копия 5.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/ChessBoard/WhiteBlack_1.png" beforeDir="false" afterPath="$PROJECT_DIR$/images/ChessBoard/WhiteBlack_1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeCache.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeFiles/3.27.3/CMakeCCompiler.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeFiles/3.27.3/CMakeCXXCompiler.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeFiles/3.27.3/CMakeDetermineCompilerABI_C.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeFiles/3.27.3/CMakeDetermineCompilerABI_CXX.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeFiles/3.27.3/CMakeSystem.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeFiles/3.27.3/CompilerIdC/CMakeCCompilerId.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeFiles/3.27.3/CompilerIdC/CMakeCCompilerId.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeFiles/3.27.3/CompilerIdCXX/CMakeCXXCompilerId.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeFiles/3.27.3/CompilerIdCXX/CMakeCXXCompilerId.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeFiles/CMakeConfigureLog.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeFiles/CMakeDirectoryInformation.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeFiles/Makefile.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeFiles/Makefile2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeFiles/TargetDirectories.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeFiles/chess.dir/DependInfo.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeFiles/chess.dir/build.make" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeFiles/chess.dir/cmake_clean.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeFiles/chess.dir/compiler_depend.internal" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeFiles/chess.dir/compiler_depend.make" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeFiles/chess.dir/compiler_depend.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeFiles/chess.dir/depend.make" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeFiles/chess.dir/flags.make" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeFiles/chess.dir/link.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeFiles/chess.dir/main.cpp.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeFiles/chess.dir/main.cpp.o.d" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeFiles/chess.dir/progress.make" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeFiles/cmake.check_cache" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeFiles/progress.marks" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Chess.sln" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Chess.vcxproj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Chess.vcxproj.filters" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Chess.vcxproj.user" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ChessPieces/Pawn.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Font/Arial/COPYRIGHT.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Font/Arial/Lalithabai.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Font/Arial/arial_bolditalicmt.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Font/Arial/arialmt.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Font/Arial/moviefilmstrip.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GameLogic.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Makefile" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/chess" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-Debug-log.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake_install.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/Bishops/BlackBishop.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/Bishops/WhiteBishop.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/ChessBoard/WhiteBlack_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/ChessBoard/WhiteBlack_2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/Kings/BlackKing.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/Kings/WhiteKing.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/Knights/BlackKnight.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/Knights/WhiteKnight.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/Pawns/BlackPawn.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/Pawns/WhitePawn.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/Queens/BlackQueen.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/Queens/WhiteQueen.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/Rooks/BlackRook.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/Rooks/WhiteRook.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/background.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/openal32.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sfml-audio-2.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sfml-audio-d-2.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sfml-graphics-2.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sfml-graphics-d-2.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sfml-network-2.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sfml-network-d-2.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sfml-system-2.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sfml-system-d-2.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sfml-window-2.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sfml-window-d-2.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/window/MainMenu.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/window/PlayMenu.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/window/Settings.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/x64/Debug/Chess.exe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/x64/Debug/Chess.exe.recipe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/x64/Debug/Chess.ilk" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/x64/Debug/Chess.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/x64/Debug/Chess.pdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/x64/Debug/Chess.tlog/CL.command.1.tlog" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/x64/Debug/Chess.tlog/CL.read.1.tlog" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/x64/Debug/Chess.tlog/CL.write.1.tlog" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/x64/Debug/Chess.tlog/Chess.lastbuildstate" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/x64/Debug/Chess.tlog/Cl.items.tlog" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/x64/Debug/Chess.tlog/link.command.1.tlog" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/x64/Debug/Chess.tlog/link.read.1.tlog" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/x64/Debug/Chess.tlog/link.write.1.tlog" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/x64/Debug/Chess.vcxproj.FileListAbsolute.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/x64/Debug/main.obj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/x64/Debug/vc143.idb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/x64/Debug/vc143.pdb" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,9 +124,6 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Debug" />
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-  </component>
-  <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/main.cpp" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="ProblemsViewState">
     <option name="selectedTabId" value="CurrentFile" />
@@ -148,6 +213,9 @@
       <workItem from="1699958014970" duration="1000" />
       <workItem from="1699958115017" duration="5000" />
       <workItem from="1699994617334" duration="27000" />
+      <workItem from="1701941361864" duration="4670000" />
+      <workItem from="1701964246249" duration="2082000" />
+      <workItem from="1701979362046" duration="3141000" />
     </task>
     <servers />
   </component>
@@ -167,11 +235,6 @@
           <url>file://$PROJECT_DIR$/ChessPieces/King.h</url>
           <line>19</line>
           <option name="timeStamp" value="4" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/GameLogic.h</url>
-          <line>5</line>
-          <option name="timeStamp" value="5" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
